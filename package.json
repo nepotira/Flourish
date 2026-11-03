@@ -1,10 +1,15 @@
 {
   "name": "flowrish",
+  "version": "1.2.0",
   "private": true,
-  "description": "Flowrish — troca de livros (site estático + Firebase)",
+  "description": "Flowrish — Biblioteca digital e plataforma de troca de livros físicos entre leitores",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nepotira/Flourish.git"
+  },
   "type": "module",
   "scripts": {
-    "start": "node server.js",
     "test": "vitest run tests/unit",
     "test:watch": "vitest tests/unit",
     "test:rules": "node tests/rules/run.js",
@@ -13,6 +18,7 @@
   "devDependencies": {
     "@firebase/rules-unit-testing": "^4.0.1",
     "firebase": "^11.0.0",
+    "firebase-tools": "^13.35.1",
     "vitest": "^3.2.4"
   }
 }
