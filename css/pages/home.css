@@ -1,55 +1,57 @@
 /* ============================================
    Home Page — Claymorphism Soft 3D & Dark Olive
+   Layout: Scrollytelling Interativo com Livro 3D
    ============================================ */
 
-/* ---------- Hero Section ---------- */
-.hero {
-  padding: calc(var(--header-h) + 48px) 0 80px;
-  position: relative;
-  overflow: hidden;
+/* Fundo Geral da Home com Orbes Ambientais */
+#main {
   background: var(--verde-oliva-dark);
-  color: var(--text-marrom);
+  position: relative;
+  overflow-x: clip;
+  min-height: 100vh;
 }
 
-.hero::before {
+#main::before {
   content: '';
   position: absolute;
-  width: 460px;
-  height: 460px;
+  width: 540px;
+  height: 540px;
   border-radius: 50%;
   background: var(--verde-oliva-card);
   top: -120px;
-  right: -100px;
+  right: -80px;
   opacity: 0.45;
-  filter: blur(50px);
+  filter: blur(60px);
   pointer-events: none;
 }
 
-.hero::after {
+#main::after {
   content: '';
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 440px;
+  height: 440px;
   border-radius: 50%;
   background: var(--primary);
-  bottom: -90px;
-  left: -60px;
-  opacity: 0.22;
-  filter: blur(70px);
+  top: 750px;
+  left: -100px;
+  opacity: 0.16;
+  filter: blur(80px);
   pointer-events: none;
 }
 
-.hero-inner {
+/* ---------- Hero Section (Scrollytelling Mode) ---------- */
+.hero {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
+  color: var(--text-marrom);
+}
+
+.hero--scrolly {
+  padding: calc(var(--header-h) + 44px) 0 60px;
+  background: transparent;
 }
 
 .hero-copy {
-  max-width: 680px;
+  max-width: 620px;
 }
 
 .hero-copy .eyebrow {
@@ -78,7 +80,7 @@
 }
 
 .hero-copy p.lead {
-  font-size: 1.18rem;
+  font-size: 1.16rem;
   max-width: 540px;
   margin-bottom: 34px;
   color: var(--text-marrom-light);
@@ -91,28 +93,6 @@
   flex-wrap: wrap;
 }
 
-.hero-illustration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.hero-illustration img,
-.hero-logomarca {
-  width: 100%;
-  max-width: 440px;
-  max-height: 480px;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.55));
-  animation: floatIllustration 6s ease-in-out infinite;
-}
-
-@keyframes floatIllustration {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
 /* ---------- Seções Gerais da Home ---------- */
 #como-funciona,
 #destaques,
@@ -120,19 +100,23 @@
 #depoimentos {
   position: relative;
   overflow: hidden;
+  padding: 56px 0;
 }
+
+#como-funciona { padding-top: 20px; }
+#destaques { padding-top: 10px; }
 
 /* ---------- Grid de Passos 3D (Como funciona) ---------- */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-top: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .step-card {
   background: var(--surface-card);
-  padding: 36px 28px;
+  padding: 32px 24px;
   border-radius: 28px;
   border: 1.5px solid var(--border);
   box-shadow: var(--shadow-3d-card);
@@ -146,30 +130,30 @@
 }
 
 .step-number {
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: linear-gradient(180deg, #F5ACB5 0%, #DF949D 45%, #C87882 100%);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 18px;
   box-shadow: 0 10px 24px -4px rgba(223, 148, 157, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
 }
 
 .step-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
   color: var(--text);
 }
 
 .step-card p {
   color: var(--text-muted);
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   line-height: 1.55;
 }
 
@@ -180,12 +164,12 @@
 
 .carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding: 16px 6px 24px;
+  padding: 16px 4px 24px;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -193,8 +177,8 @@
 }
 
 .carousel-track > .book-card {
-  flex: 0 0 calc((100% - 48px) / 3);
-  min-width: 240px;
+  flex: 0 0 calc((100% - 20px) / 2);
+  min-width: 220px;
   scroll-snap-align: start;
 }
 
@@ -207,8 +191,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: linear-gradient(180deg, rgba(100, 102, 66, 0.95) 0%, rgba(78, 79, 49, 0.98) 100%);
   color: var(--creme);
@@ -220,7 +204,7 @@
   justify-content: center;
   transition: all 0.22s ease;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .carousel-btn:hover {
@@ -231,20 +215,20 @@
   box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.55), 0 0 14px rgba(223, 148, 157, 0.3);
 }
 
-.carousel-btn.carousel-prev { left: -24px; }
-.carousel-btn.carousel-next { right: -24px; }
+.carousel-btn.carousel-prev { left: -20px; }
+.carousel-btn.carousel-next { right: -20px; }
 
 /* ---------- Grid de Benefícios 3D ---------- */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .benefit-card {
   background: var(--surface-card);
-  padding: 32px 28px;
+  padding: 30px 24px;
   border-radius: 28px;
   border: 1.5px solid var(--border);
   box-shadow: var(--shadow-3d-card);
@@ -257,25 +241,25 @@
 }
 
 .benefit-icon {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .benefit-gif {
-  width: 64px;
-  height: 64px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   display: block;
 }
 
 .benefit-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
   color: var(--text);
 }
 
 .benefit-card p {
   color: var(--text-muted);
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   line-height: 1.55;
 }
 
@@ -285,7 +269,7 @@
   border: 1.5px solid var(--border);
   border-radius: 32px;
   box-shadow: var(--shadow-3d-card);
-  padding: 56px 36px;
+  padding: 50px 32px;
   text-align: center;
   color: var(--text);
   position: relative;
@@ -295,12 +279,12 @@
 .cta-banner::before {
   content: '';
   position: absolute;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   background: var(--primary);
-  top: -80px;
-  right: -60px;
+  top: -70px;
+  right: -50px;
   opacity: 0.14;
   filter: blur(50px);
   pointer-events: none;
@@ -309,29 +293,29 @@
 .cta-content {
   position: relative;
   z-index: 1;
-  max-width: 640px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
 .cta-banner h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
   color: var(--creme);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .cta-banner p {
   color: var(--text-secondary);
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
-/* ---------- Responsividade Mobile First ---------- */
-@media (max-width: 960px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
+/* ---------- Responsividade Mobile First (< 992px) ---------- */
+@media (max-width: 992px) {
+  .hero--scrolly {
+    padding-top: calc(var(--header-h) + 20px);
+    padding-bottom: 30px;
     text-align: center;
-    gap: 36px;
   }
   .hero-copy {
     margin: 0 auto;
@@ -343,37 +327,29 @@
   .hero-actions {
     justify-content: center;
   }
-  .hero-illustration img,
-  .hero-logomarca {
-    max-width: 340px;
-  }
   .carousel-track > .book-card {
     flex: 0 0 calc((100% - 24px) / 2);
   }
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding-top: calc(var(--header-h) + 24px);
-    padding-bottom: 60px;
+  .hero--scrolly {
+    padding-top: calc(var(--header-h) + 16px);
+    padding-bottom: 20px;
   }
   .hero-copy h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
   .hero-copy p.lead {
-    font-size: 1.05rem;
-  }
-  .hero-illustration img,
-  .hero-logomarca {
-    max-width: 250px;
+    font-size: 1.02rem;
   }
   .steps-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .benefits-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .carousel-track {
     gap: 16px;
@@ -382,13 +358,13 @@
     -webkit-overflow-scrolling: touch;
   }
   .carousel-track > .book-card {
-    flex: 0 0 min(270px, 82vw);
-    min-width: 230px;
+    flex: 0 0 min(260px, 80vw);
+    min-width: 220px;
   }
   .carousel-btn {
     display: none !important;
   }
   .cta-banner {
-    padding: 40px 20px;
+    padding: 36px 18px;
   }
 }

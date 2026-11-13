@@ -1,0 +1,567 @@
+/* ============================================================
+   Flowrish — 3D Interactive Scrollytelling Book
+   Design: Claymorphism Soft 3D (Dark Olive, Rose & Warm Cream)
+   Engine: Pure CSS3 3D GPU-Accelerated (Zero heavy bundles)
+   ============================================================ */
+
+:root {
+  --book-w: 280px;
+  --book-h: 390px;
+  --book-thickness: 34px;
+  --book-cover-color: #353620;
+  --book-cover-border: #4B4C31;
+  --book-cover-accent: #DF949D;
+  --book-page-bg: #FAF6EC;
+  --book-page-text: #323028;
+  --book-page-muted: #736E62;
+  --book-ribbon-color: #DF949D;
+}
+
+/* ---------- Scrollytelling Layout Grid ---------- */
+.scrolly-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 40px;
+  align-items: start;
+  position: relative;
+}
+
+.scrolly-content {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Coluna Direita Fixa com o Palco 3D */
+.scrolly-aside {
+  position: relative;
+  z-index: 3;
+}
+
+.book-sticky-stage {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  height: calc(100vh - var(--header-h) - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1600px;
+  perspective-origin: 50% 48%;
+  pointer-events: none;
+}
+
+.book-interactive-area {
+  pointer-events: auto;
+  position: relative;
+  width: var(--book-w);
+  height: var(--book-h);
+  transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Quando o livro abre, a largura da área interativa expande para comportar 2 páginas */
+.book-interactive-area.is-open {
+  width: calc(var(--book-w) * 1.88);
+}
+
+/* ---------- O Objeto 3D: Livro ---------- */
+.book-3d {
+  width: var(--book-w);
+  height: var(--book-h);
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) rotateX(10deg) rotateY(-22deg);
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Sombra de Projeção na Mesa (Ambiente Claymorphic) */
+.book-ambient-shadow {
+  position: absolute;
+  bottom: -32px;
+  left: 5%;
+  width: 90%;
+  height: 48px;
+  background: radial-gradient(ellipse at center, rgba(16, 17, 10, 0.65) 0%, rgba(16, 17, 10, 0) 75%);
+  border-radius: 50%;
+  transform: rotateX(90deg) translateZ(-20px);
+  filter: blur(12px);
+  pointer-events: none;
+  transition: all 0.65s ease;
+}
+
+.book-interactive-area.is-open .book-ambient-shadow {
+  width: 170%;
+  left: -35%;
+  height: 56px;
+  opacity: 0.85;
+}
+
+/* ---------- Capa Traseira (Back Cover) ---------- */
+.book-back-cover {
+  position: absolute;
+  inset: 0;
+  background: var(--book-cover-color);
+  border-radius: 10px 18px 18px 10px;
+  border: 1.5px solid var(--book-cover-border);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.5),
+    0 18px 36px rgba(0, 0, 0, 0.4);
+  transform: translateZ(calc(var(--book-thickness) * -0.5));
+}
+
+/* ---------- Lombada 3D (Spine) ---------- */
+.book-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--book-thickness);
+  height: var(--book-h);
+  background: linear-gradient(90deg, #252615 0%, #3F4027 45%, #252615 100%);
+  border-radius: 8px 0 0 8px;
+  transform: rotateY(-90deg) translateZ(calc(var(--book-thickness) * 0.5));
+  transform-origin: left center;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-spine-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--book-cover-accent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  opacity: 0.88;
+}
+
+/* Nervuras táteis na lombada */
+.book-spine::before,
+.book-spine::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: rgba(223, 148, 157, 0.35);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.book-spine::before { top: 38px; }
+.book-spine::after { bottom: 38px; }
+
+/* ---------- Bloco de Folhas (Simulação de espessura de papel) ---------- */
+.book-pages-block {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 6px;
+  right: 4px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #F3EDE0,
+    #F3EDE0 2px,
+    #E8E0D0 3px,
+    #E8E0D0 4px
+  );
+  border-radius: 4px 14px 14px 4px;
+  transform: translateZ(calc(var(--book-thickness) * -0.45));
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    inset -4px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Miolo Aberto: Páginas Esquerda & Direita ---------- */
+.book-spread {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: opacity 0.4s ease 0.2s, visibility 0.4s ease 0.2s;
+}
+
+.book-interactive-area.is-open .book-spread {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.book-page-leaf {
+  width: var(--book-w);
+  height: var(--book-h);
+  background: var(--book-page-bg);
+  box-sizing: border-box;
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Página da Esquerda */
+.book-page-left {
+  border-radius: 12px 4px 4px 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, #EDE5D5 0%, var(--book-page-bg) 18%, var(--book-page-bg) 95%, #E6DEC8 100%);
+  transform-origin: right center;
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+/* Página da Direita */
+.book-page-right {
+  border-radius: 4px 12px 12px 4px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, #EDE5D5 0%, var(--book-page-bg) 18%, var(--book-page-bg) 95%, #E6DEC8 100%);
+  transform-origin: left center;
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+/* Sombra central da costura/canaleta entre as duas páginas */
+.book-gutter-shadow {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 32px;
+  pointer-events: none;
+  z-index: 5;
+}
+.book-page-left .book-gutter-shadow {
+  right: 0;
+  background: linear-gradient(to left, rgba(40, 35, 20, 0.25), transparent);
+}
+.book-page-right .book-gutter-shadow {
+  left: 0;
+  background: linear-gradient(to right, rgba(40, 35, 20, 0.25), transparent);
+}
+
+/* Conteúdo interno das páginas */
+.page-header-micro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(67, 68, 42, 0.15);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+.page-chapter {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--book-cover-accent);
+}
+.page-number {
+  font-size: 0.75rem;
+  color: var(--book-page-muted);
+  font-weight: 600;
+}
+
+.page-body {
+  font-family: var(--font-body);
+  color: var(--book-page-text);
+  line-height: 1.5;
+}
+.page-body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: #353620;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.page-body p {
+  font-size: 0.88rem;
+  color: var(--book-page-muted);
+  margin-bottom: 12px;
+}
+
+/* Badge ilustrativo do passo ativo */
+.page-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(223, 148, 157, 0.2);
+  color: #8C3E4A;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-quote {
+  font-style: italic;
+  font-size: 0.86rem;
+  color: #4B4C31;
+  border-left: 2px solid var(--book-cover-accent);
+  padding-left: 10px;
+  margin: 16px 0;
+}
+
+.page-illustration-micro {
+  width: 52px;
+  height: 52px;
+  margin: 10px auto 0;
+  display: block;
+  opacity: 0.9;
+}
+
+/* Selo de cera na página esquerda */
+.page-wax-seal {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F5ACB5 0%, #DF949D 50%, #A6525E 100%);
+  box-shadow: 0 4px 10px rgba(166, 82, 94, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+/* ---------- Capa Frontal Interativa (Front Cover) ---------- */
+.book-front-cover {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: rotateY(0deg) translateZ(calc(var(--book-thickness) * 0.5));
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 8px 18px 18px 8px;
+}
+
+/* Abertura da Capa em 3D */
+.book-interactive-area.is-open .book-front-cover {
+  transform: rotateY(-180deg) translateZ(calc(var(--book-thickness) * 0.5));
+}
+
+/* Lado Externo da Capa (Front Face) */
+.book-cover-face-front {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--book-cover-color);
+  border-radius: 8px 18px 18px 8px;
+  border: 2px solid var(--book-cover-border);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.55),
+    0 12px 28px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 24px;
+  box-sizing: border-box;
+}
+
+/* Moldura dourada/rosada em relevo na capa */
+.book-cover-frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(223, 148, 157, 0.4);
+  border-radius: 4px 12px 12px 4px;
+  pointer-events: none;
+}
+.book-cover-frame::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(223, 148, 157, 0.22);
+  border-radius: 2px 8px 8px 2px;
+}
+
+.book-cover-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--creme);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.01em;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.book-cover-tagline {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--book-cover-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.book-cover-flower {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  margin: auto 0;
+  transition: transform 0.3s ease;
+}
+.book-3d:hover .book-cover-flower {
+  transform: scale(1.05);
+}
+
+.book-cover-footer {
+  font-size: 0.74rem;
+  color: rgba(251, 246, 235, 0.65);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Lado Interno da Capa (Back Face / Guarda do Livro) */
+.book-cover-face-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: #393A24;
+  border-radius: 18px 8px 8px 18px;
+  border: 1.5px solid var(--book-cover-border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--creme);
+  text-align: center;
+}
+
+.book-ex-libris {
+  border: 1.5px solid rgba(223, 148, 157, 0.45);
+  padding: 18px 16px;
+  border-radius: 8px;
+  background: rgba(25, 26, 15, 0.4);
+  max-width: 85%;
+}
+.book-ex-libris h5 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--book-cover-accent);
+  margin: 0 0 6px;
+}
+.book-ex-libris p {
+  font-size: 0.78rem;
+  color: rgba(251, 246, 235, 0.8);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Fita Marcadora de Cetim (Bookmark Ribbon) ---------- */
+.book-ribbon {
+  position: absolute;
+  top: -6px;
+  left: 45px;
+  width: 14px;
+  height: calc(var(--book-h) + 38px);
+  background: linear-gradient(180deg, #F5ACB5 0%, var(--book-ribbon-color) 70%, #C87882 100%);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 0 0 3px 3px;
+  transform: translateZ(calc(var(--book-thickness) * 0.48));
+  pointer-events: none;
+  z-index: 12;
+  transition: transform 0.6s ease;
+}
+
+/* Recorte em V na ponta da fita */
+.book-ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #353620;
+}
+
+/* Dica tátil de clique / interação */
+.book-hint-pill {
+  position: absolute;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(53, 54, 32, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--creme);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(223, 148, 157, 0.35);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.book-3d:hover .book-hint-pill {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* ---------- Modo Mobile / Celular / Tablets (< 992px) ---------- */
+@media (max-width: 992px) {
+  .scrolly-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* No mobile, o palco 3D deixa de ser sticky gigante e fica integrado ao Hero */
+  .scrolly-aside {
+    order: -1;
+    margin-bottom: 32px;
+  }
+
+  .book-sticky-stage {
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: 24px 0 36px;
+    perspective: 1200px;
+  }
+
+  :root {
+    --book-w: 240px;
+    --book-h: 330px;
+    --book-thickness: 28px;
+  }
+
+  .book-interactive-area.is-open {
+    width: var(--book-w); /* Em telas menores, a capa abre em leque sem estourar a viewport */
+  }
+
+  .book-page-leaf {
+    padding: 20px 18px;
+  }
+
+  .book-cover-flower {
+    width: 110px;
+    height: 110px;
+  }
+
+  .book-hint-pill {
+    bottom: -36px;
+    font-size: 0.74rem;
+  }
+}

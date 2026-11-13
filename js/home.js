@@ -2,11 +2,13 @@ import { renderNavbar, renderFooter } from './navbar.js';
 import { renderBookGrid, initRevealAnimations } from './book-card.js';
 import { initTheme } from './theme.js';
 import { authReady, getMostLikedBooks } from './storage.js';
+import { init3DBook } from './book-3d.js';
 
 initTheme();
 await authReady;
 renderNavbar('index.html');
 renderFooter();
+init3DBook();
 
 const featured = await getMostLikedBooks(6);
 const featuredTrack = document.getElementById('featuredBooks');

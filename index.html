@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/pages/home.css">
+<link rel="stylesheet" href="css/book-3d.css">
 <meta property="og:title" content="Flowrish — troque livros com sua comunidade">
 <meta property="og:description" content="Encontre novos livros e combine trocas pelo WhatsApp em uma plataforma acolhedora para leitores.">
 <meta property="og:type" content="website">
@@ -28,126 +29,209 @@
 <div id="navbar-root"></div>
 
 <main id="main">
-  <!-- HERO SECTION CLAYMORPHISM 3D -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy animate-in">
-        <span class="eyebrow"><img src="assets/logo.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:middle;margin-right:6px;">Sua próxima leitura está aqui</span>
-        <h1>Troque livros, descubra histórias, construa comunidade.</h1>
-        <p class="lead">Dê nova vida aos livros que já leu e encontre os seus próximos favoritos — combinando a troca diretamente pelo WhatsApp com leitores de todo o Brasil.</p>
-        <div class="hero-actions">
-          <a href="cadastro.html" class="btn btn-primary btn-lg" id="ctaComecar">Começar Agora</a>
-          <a href="biblioteca.html" class="btn btn-secondary btn-lg">Explorar Biblioteca</a>
+  <div class="container scrolly-container">
+    <!-- COLUNA ESQUERDA: CONTEÚDO PRINCIPAL DO SITE -->
+    <div class="scrolly-content">
+      <!-- HERO SECTION -->
+      <section class="hero hero--scrolly">
+        <div class="hero-copy animate-in">
+          <span class="eyebrow"><img src="assets/logo.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:middle;margin-right:6px;">Sua próxima leitura está aqui</span>
+          <h1>Troque livros, descubra histórias, construa comunidade.</h1>
+          <p class="lead">Dê nova vida aos livros que já leu e encontre os seus próximos favoritos — combinando a troca diretamente pelo WhatsApp com leitores de todo o Brasil.</p>
+          <div class="hero-actions">
+            <a href="cadastro.html" class="btn btn-primary btn-lg" id="ctaComecar">Começar Agora</a>
+            <a href="biblioteca.html" class="btn btn-secondary btn-lg">Explorar Biblioteca</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-illustration animate-in">
-        <img src="assets/logomarca.png" alt="Flowrish — troque livros com afeto" class="hero-logomarca">
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="section" id="como-funciona">
-    <div class="container">
-      <div class="section-head text-center">
-        <span class="eyebrow">Simples assim</span>
-        <h2>Como funciona</h2>
-        <p>Em quatro passos você já está combinando trocas com outros leitores.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="card step-card reveal">
-          <div class="step-number">1</div>
-          <h3>Anuncie seus livros</h3>
-          <p>Cadastre manualmente ou pelo ISBN — preenchemos capa, autor e sinopse automaticamente.</p>
+      <!-- COMO FUNCIONA -->
+      <section class="section" id="como-funciona">
+        <div class="section-head">
+          <span class="eyebrow">Simples assim</span>
+          <h2>Como funciona</h2>
+          <p>Em quatro passos você já está combinando trocas com outros leitores.</p>
         </div>
-        <div class="card step-card reveal">
-          <div class="step-number">2</div>
-          <h3>Encontre o que deseja</h3>
-          <p>Explore a biblioteca com busca em tempo real e filtros por gênero e conservação.</p>
+        <div class="steps-grid">
+          <div class="card step-card reveal" data-step="1">
+            <div class="step-number">1</div>
+            <h3>Anuncie seus livros</h3>
+            <p>Cadastre manualmente ou pelo ISBN — preenchemos capa, autor e sinopse automaticamente.</p>
+          </div>
+          <div class="card step-card reveal" data-step="2">
+            <div class="step-number">2</div>
+            <h3>Encontre o que deseja</h3>
+            <p>Explore a biblioteca com busca em tempo real e filtros por gênero e conservação.</p>
+          </div>
+          <div class="card step-card reveal" data-step="3">
+            <div class="step-number">3</div>
+            <h3>Combine pelo WhatsApp</h3>
+            <p>Envie sua proposta direto para o WhatsApp do anunciante, com mensagem pré-formatada e fotos.</p>
+          </div>
+          <div class="card step-card reveal" data-step="4">
+            <div class="step-number">4</div>
+            <h3>Receba e avalie</h3>
+            <p>Combine a entrega ou envio com comodidade e avalie a experiência no perfil do leitor.</p>
+          </div>
         </div>
-        <div class="card step-card reveal">
-          <div class="step-number">3</div>
-          <h3>Combine pelo WhatsApp</h3>
-          <p>Envie sua proposta direto para o WhatsApp do anunciante, com mensagem pré-formatada e fotos.</p>
-        </div>
-        <div class="card step-card reveal">
-          <div class="step-number">4</div>
-          <h3>Receba e avalie</h3>
-          <p>Combine a entrega ou envio com comodidade e avalie a experiência no perfil do leitor.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- LIVROS MAIS AMADOS -->
-  <section class="section" style="padding-top:0;" id="destaques">
-    <div class="container">
-      <div class="flex justify-between items-center" style="margin-bottom:24px;">
-        <h2 class="mb-0">Livros mais amados</h2>
-        <a href="biblioteca.html" class="btn btn-secondary">Ver todos</a>
-      </div>
-      <div class="carousel">
-        <button type="button" class="carousel-btn carousel-prev" id="featuredPrev" aria-label="Livro anterior">‹</button>
-        <div class="carousel-track" id="featuredBooks"></div>
-        <button type="button" class="carousel-btn carousel-next" id="featuredNext" aria-label="Próximo livro">›</button>
-      </div>
-    </div>
-  </section>
+      <!-- LIVROS MAIS AMADOS -->
+      <section class="section" style="padding-top:0;" id="destaques">
+        <div class="flex justify-between items-center" style="margin-bottom:24px;">
+          <h2 class="mb-0">Livros mais amados</h2>
+          <a href="biblioteca.html" class="btn btn-secondary">Ver todos</a>
+        </div>
+        <div class="carousel">
+          <button type="button" class="carousel-btn carousel-prev" id="featuredPrev" aria-label="Livro anterior">‹</button>
+          <div class="carousel-track" id="featuredBooks"></div>
+          <button type="button" class="carousel-btn carousel-next" id="featuredNext" aria-label="Próximo livro">›</button>
+        </div>
+      </section>
 
-  <!-- BENEFÍCIOS -->
-  <section class="section" id="beneficios">
-    <div class="container">
-      <div class="section-head text-center">
-        <span class="eyebrow">Por que usar</span>
-        <h2>Benefícios da plataforma</h2>
-      </div>
-      <div class="benefits-grid">
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/sustentavel2.gif" data-duration="3000" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Sustentável</h3>
-          <p>Livros circulam ao invés de acumular poeira na estante — bom para você e para o planeta.</p>
+      <!-- BENEFÍCIOS -->
+      <section class="section" id="beneficios">
+        <div class="section-head">
+          <span class="eyebrow">Por que usar</span>
+          <h2>Benefícios da plataforma</h2>
         </div>
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/favorito2.gif" data-duration="1570" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Economia real</h3>
-          <p>Troque diretamente seus livros lidos por novas leituras sem gastar dinheiro em livrarias.</p>
+        <div class="benefits-grid">
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/sustentavel2.gif" data-duration="3000" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Sustentável</h3>
+            <p>Livros circulam ao invés de acumular poeira na estante — bom para você e para o planeta.</p>
+          </div>
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/favorito2.gif" data-duration="1570" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Economia real</h3>
+            <p>Troque diretamente seus livros lidos por novas leituras sem gastar dinheiro em livrarias.</p>
+          </div>
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/aperto-de-mao2.gif" data-duration="1840" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Comunidade confiável</h3>
+            <p>Avaliações transparentes entre leitores garantem segurança e confiança em cada troca.</p>
+          </div>
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/caixa-de-entrega2.gif" data-duration="3000" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Entrega flexível</h3>
+            <p>Combine entregas presenciais em pontos públicos ou envio pelos Correios como preferirem.</p>
+          </div>
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/missao2.gif" data-duration="2000" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Recomendações</h3>
+            <p>Descubra títulos em destaque e sugestões baseadas nos seus gêneros literários favoritos.</p>
+          </div>
+          <div class="card benefit-card reveal">
+            <div class="benefit-icon benefit-icon-plain"><img data-src="assets/bater2papo.gif" data-duration="3600" alt="" width="64" height="64" class="benefit-gif"></div>
+            <h3>Conversa direta</h3>
+            <p>Conecte-se instantaneamente pelo WhatsApp com o leitor, sem intermediários ou burocracia.</p>
+          </div>
         </div>
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/aperto-de-mao2.gif" data-duration="1840" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Comunidade confiável</h3>
-          <p>Avaliações transparentes entre leitores garantem segurança e confiança em cada troca.</p>
-        </div>
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/caixa-de-entrega2.gif" data-duration="3000" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Entrega flexível</h3>
-          <p>Combine entregas presenciais em pontos públicos ou envio pelos Correios como preferirem.</p>
-        </div>
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/missao2.gif" data-duration="2000" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Recomendações</h3>
-          <p>Descubra títulos em destaque e sugestões baseadas nos seus gêneros literários favoritos.</p>
-        </div>
-        <div class="card benefit-card reveal">
-          <div class="benefit-icon benefit-icon-plain"><img data-src="assets/bater2papo.gif" data-duration="3600" alt="" width="64" height="64" class="benefit-gif"></div>
-          <h3>Conversa direta</h3>
-          <p>Conecte-se instantaneamente pelo WhatsApp com o leitor, sem intermediários ou burocracia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- CTA BANNER -->
-  <section class="section" id="depoimentos">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="cta-content">
-          <h2>Pronto para dar um novo destino aos seus livros?</h2>
-          <p>Crie sua conta gratuitamente em segundos, anuncie seus livros no acervo e comece a trocar hoje mesmo.</p>
-          <a href="cadastro.html" class="btn btn-primary btn-lg">Criar minha conta</a>
+      <!-- CTA BANNER -->
+      <section class="section" id="depoimentos">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2>Pronto para dar um novo destino aos seus livros?</h2>
+            <p>Crie sua conta gratuitamente em segundos, anuncie seus livros no acervo e comece a trocar hoje mesmo.</p>
+            <a href="cadastro.html" class="btn btn-primary btn-lg">Criar minha conta</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- COLUNA DIREITA: PALCO FIXO DO LIVRO 3D SCROLLYTELLING -->
+    <aside class="scrolly-aside" aria-label="Apresentação do Livro 3D">
+      <div class="book-sticky-stage" id="bookStage">
+        <div class="book-interactive-area" id="bookArea">
+          <div class="book-3d" id="book3D" role="region" aria-label="Livro 3D Interativo Flowrish">
+            <!-- Sombra de projeção na mesa -->
+            <div class="book-ambient-shadow"></div>
+
+            <!-- Capa traseira -->
+            <div class="book-back-cover"></div>
+
+            <!-- Bloco de folhas (espessura realista) -->
+            <div class="book-pages-block"></div>
+
+            <!-- Fita marcadora de cetim -->
+            <div class="book-ribbon"></div>
+
+            <!-- Miolo aberto (páginas internas) -->
+            <div class="book-spread">
+              <!-- Página esquerda -->
+              <div class="book-page-leaf book-page-left">
+                <div class="book-gutter-shadow"></div>
+                <div class="page-header-micro">
+                  <span class="page-chapter">Flowrish • Comunidade</span>
+                  <span class="page-number">pag. 12</span>
+                </div>
+                <div class="page-body">
+                  <div class="page-wax-seal">🌸</div>
+                  <h4>Histórias que florescem</h4>
+                  <p>Cada livro carrega o carinho de quem o leu. Em nossa comunidade, cada troca une dois apaixonados por leitura.</p>
+                  <blockquote class="page-quote">
+                    "Um livro compartilhado é uma história que nunca morre."
+                  </blockquote>
+                  <img src="assets/logo-horizontal-marrom.png" alt="Flowrish" style="height:22px;margin-top:14px;opacity:0.85;">
+                </div>
+              </div>
+
+              <!-- Página direita (dinâmica sincronizada com o scroll) -->
+              <div class="book-page-leaf book-page-right">
+                <div class="book-gutter-shadow"></div>
+                <div class="page-header-micro">
+                  <span class="page-chapter" id="pageChapter">Capítulo 1 • O Anúncio</span>
+                  <span class="page-number">pag. 13</span>
+                </div>
+                <div class="page-body">
+                  <span class="page-step-badge" id="pageStepBadge">Passo 1 de 4</span>
+                  <h4 id="pageStepTitle">Anuncie seus livros</h4>
+                  <p id="pageStepDesc">Dê uma nova história ao livro que já leu. Preencha pelo ISBN ou manual com capa e fotos reais.</p>
+                  <div style="margin-top:18px;padding:10px 12px;background:rgba(67,68,42,0.08);border-radius:10px;font-size:0.82rem;color:#353620;border-left:3px solid #DF949D;">
+                    ✨ <strong>Dica:</strong> Propostas combinadas no WhatsApp têm resposta média em menos de 15 minutos!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capa frontal interativa (abre e fecha em 3D) -->
+            <div class="book-front-cover">
+              <!-- Lado externo da capa -->
+              <div class="book-cover-face-front">
+                <div class="book-cover-frame"></div>
+                <div>
+                  <div class="book-cover-tagline">Comunidade de Leitores</div>
+                  <div class="book-cover-title">Flowrish</div>
+                </div>
+                <img src="assets/logomarca.png" alt="Flowrish" class="book-cover-flower">
+                <div class="book-cover-footer">Troque livros • Descubra histórias</div>
+              </div>
+
+              <!-- Lado interno da capa (guarda do livro) -->
+              <div class="book-cover-face-back">
+                <div class="book-ex-libris">
+                  <h5>Ex-Líbris Flowrish</h5>
+                  <p>Este volume pertence à comunidade leitora. Role a página para abrir e explorar.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lombada 3D -->
+            <div class="book-spine">
+              <span class="book-spine-text">FLOWRISH • VOL. 1</span>
+            </div>
+
+            <!-- Dica tátil de clique / interação -->
+            <div class="book-hint-pill" id="bookHintPill">
+              <span id="bookHintText">Role para abrir ou clique</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 </main>
 
 <div id="footer-root"></div>
