@@ -64,7 +64,8 @@ export function renderNavbar(activePage = '') {
     <header class="navbar navbar--home">
       <div class="navbar-inner">
         <a href="index.html" class="logo" aria-label="Flowrish — início">
-          <img src="assets/logo-horizontal.png" alt="Flowrish" class="logo-horizontal-img">
+          <img src="assets/logo-horizontal.png" alt="Flowrish" class="logo-horizontal-img logo-dark">
+          <img src="assets/logo-horizontal-marrom.png" alt="Flowrish" class="logo-horizontal-img logo-light">
         </a>
         <nav class="nav-links" aria-label="Navegação principal">${linksHTML}</nav>
         <form class="nav-search" role="search" id="navSearchForm">
@@ -85,7 +86,8 @@ export function renderNavbar(activePage = '') {
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-panel">
         <div class="flex justify-between items-center" style="margin-bottom:12px;">
-          <img src="assets/logo-horizontal-marrom.png" alt="Flowrish" style="height:32px;">
+          <img src="assets/logo-horizontal.png" alt="Flowrish" class="logo-dark" style="height:32px;">
+          <img src="assets/logo-horizontal-marrom.png" alt="Flowrish" class="logo-light" style="height:32px;">
           <button class="btn-icon" id="closeDrawer" aria-label="Fechar menu">✕</button>
         </div>
         <form class="nav-search mobile-search" id="mobileSearchForm">

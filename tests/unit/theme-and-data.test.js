@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import fs from 'node:fs';
+import path from 'node:path';
 import { bookGeneros, GENEROS, ESTADOS_CONSERVACAO } from '../../js/data.js';
 import * as theme from '../../js/theme.js';
 
@@ -8,6 +10,15 @@ describe('theme system contracts', () => {
     expect(typeof theme.getTheme).toBe('function');
     expect(typeof theme.toggleTheme).toBe('function');
     expect(typeof theme.setTheme).toBe('function');
+  });
+
+  it('garante tokens de alto contraste para o modo claro e escuro em variables.css', () => {
+    const cssPath = path.resolve(__dirname, '../../css/variables.css');
+    const cssContent = fs.readFileSync(cssPath, 'utf8');
+    expect(cssContent).toContain('[data-theme="light"]');
+    expect(cssContent).toContain('--navbar-bg');
+    expect(cssContent).toContain('--footer-bg');
+    expect(cssContent).toContain('--surface-input');
   });
 });
 

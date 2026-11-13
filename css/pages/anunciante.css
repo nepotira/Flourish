@@ -49,12 +49,12 @@
   margin: 8px 0 0;
   padding: 4px 16px;
   border-radius: var(--radius-pill);
-  background: #353620;
+  background: var(--surface-chip);
   border: 1.5px solid var(--border);
   box-shadow: var(--shadow-clay-input);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--creme);
+  color: var(--text-chip);
 }
 
 .sl-stats {

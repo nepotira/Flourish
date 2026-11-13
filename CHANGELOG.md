@@ -6,6 +6,14 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+### Corrigido
+- **Correção Geral e Harmonização do Modo Claro em Todo o Projeto**:
+  - `css/variables.css`: Inversão correta de contraste para tokens globais em `[data-theme="light"]` (`--creme` remapeado para `#353620` em contextos de texto), eliminando texto branco/creme sobre fundo bege.
+  - `css/components.css`: Navbar adaptável com fundo claro suave (`--navbar-bg`), cápsula de links com contraste (`--navbar-capsule-bg`), busca tátil com fundo branco e alternância automática da logo para `logo-horizontal-marrom.png` no tema claro.
+  - `css/components.css`: Rodapé adaptativo com `--footer-bg` e `--footer-text`, prevenindo texto escuro sobre fundo escuro.
+  - `index.html` & `css/pages/home.css`: Seção Hero reestruturada com `logomarca-marrom.png` no modo claro, título `h1` em verde oliva escuro legível (`--hero-h1-color`) e badge com contraste rose.
+  - `css/base.css`: Botão secundário (`.btn-secondary`) otimizado no modo claro com gradiente verde oliva e texto branco tátil.
+  - Telas internas (`cadastrar-livro.css`, `livro.css`, `perfil.css`, `anunciante.css`, `ajuda.css`, `biblioteca.css`): Substituição de `#353620` estático por `var(--surface-input)` e `var(--surface-chip)` para inputs e badges com visual limpo e legível em ambos os temas.
 
 ## [1.3.0] - 2026-11-13
 ### Alterado

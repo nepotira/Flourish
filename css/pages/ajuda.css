@@ -61,8 +61,8 @@
   padding: 0 20px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-pill);
-  background: #353620;
-  color: var(--creme);
+  background: var(--surface-input);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
@@ -74,8 +74,8 @@
 .ajuda-input:focus {
   outline: none;
   border-color: var(--primary);
-  background: #3B3C23;
-  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), inset 0 2.5px 5px rgba(0, 0, 0, 0.35);
+  background: var(--surface-input);
+  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), var(--shadow-clay-input);
 }
 
 .ajuda-mensagem {

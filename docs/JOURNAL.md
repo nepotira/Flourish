@@ -1,5 +1,15 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Correção Geral de Contraste e Modo Claro
+
+- **Contexto**: Relato do operador com captura de tela demonstrando que, ao ativar o modo claro, a Navbar permanecia em verde oliva escuro enquanto a página ficava clara, títulos com `color: var(--creme)` ficavam invisíveis (creme sobre bege) e a flor/tipografia do Hero perdiam legibilidade.
+- **Ações Realizadas**:
+  1. `css/variables.css`: Mapeamento de alto contraste para o tema claro (`[data-theme="light"]`), invertendo `--creme` para `#353620` em textos, criando tokens adaptáveis para Navbar, Hero, Rodapé, Inputs e Chips.
+  2. `css/components.css`: Navbar adaptável com suporte a modo claro, troca de logo automática para a versão marrom (`assets/logo-horizontal-marrom.png`), rodapé adaptável sem conflito de cores e chips táteis claros.
+  3. `index.html` & `css/pages/home.css`: Hero adaptável com `assets/logomarca-marrom.png` em modo claro e título escuro de alto contraste.
+  4. Telas internas (`cadastrar-livro`, `livro`, `perfil`, `anunciante`, `ajuda`, `biblioteca`): Inputs e chips migrados para `var(--surface-input)` e `var(--surface-chip)`.
+- **Validação**: 11/11 testes unitários aprovados no Vitest (`npm test`). Servidor local mantido ativo para validação antes de envio.
+
 ## 13 de Novembro de 2026 — Harmonização Visual Completa Claymorphism Soft 3D
 
 - **Contexto**: Auditoria exaustiva de todas as 11 páginas HTML e 14 arquivos CSS para localizar e eliminar qualquer inconsistência visual residual (resquícios de protótipos antigos, fontes desalinhadas, cores legadas e ausência de profundidade).
