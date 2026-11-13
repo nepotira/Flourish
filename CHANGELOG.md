@@ -7,15 +7,13 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 ### Corrigido
-- **Refinamento e Harmonização Visual Concisa do Modo Claro e Hero 3D**:
-  - `index.html`: Restauração da autêntica arte 3D da flor Claymorphism (`assets/logomarca.png`) no Hero, removendo o gráfico com contorno distorcido (`logomarca-marrom.png`).
-  - `assets/logo-horizontal-dark-olive.png`: Geração da versão de alta resolução da logomarca horizontal em Verde Oliva escuro (`#2D2E1B`) com antialiasing e iluminação 3D da flor preservados.
-  - `js/navbar.js`: Integração da nova logo escura no modo claro e estilização do botão "Entrar" com classe e relevo 3D tátil (`.btn-primary.nav-login`).
-  - `css/variables.css`: Harmonização concisa da paleta do modo claro (`#F7F5EE` marfim, `#2D2E1B` tipografia nítida, `#FFFFFF` para superfícies/inputs com sombras táteis sutis).
-  - `css/base.css`: Redesenho do botão secundário (`.btn-secondary`) no modo claro para pílula 3D em creme/branco suave com texto escuro, eliminando o bloco verde escuro pesado.
-  - `css/components.css`: Estilização dedicada para `.nav-login`, links ativos e contraste no modo claro.
-  - `css/pages/home.css`: Ajuste de iluminação ambiente do Hero no modo claro (brilho suave rosa e creme sem manchas turvas) e sombra suave da flor 3D.
-  - `css/pages/auth.css` & `css/pages/biblioteca.css`: Harmonização de cartões, formulários e chips de filtro para acabamento limpo em branco e marfim.
+- **Correção Abrangente do Modo Claro (Autenticação, Avaliações, Biblioteca e Detalhes do Livro)**:
+  - `css/pages/auth.css`: Redesenho completo do painel esquerdo (`.auth-visual`) no modo claro com fundo marfim acolhedor (`#FAF7EE` a `#EFEBE0`), tipografia nítida em Verde Oliva escuro (`#2D2E1B`), pílulas de benefícios 3D em branco/creme suave e eliminação definitiva do contraste escuro-sobre-escuro na tela de login, cadastro e redefinição de senha. Links e botões de rodapé corrigidos para não desaparecerem em branco no hover.
+  - `css/avaliacoes.css`: Substituição de textos beges estáticos legados (`#F6EED9`) por variáveis semânticas `var(--text)` e `var(--text-muted)`, restaurando legibilidade total das avaliações de perfil no modo claro.
+  - `css/pages/biblioteca.css`: Correção do campo de busca que escurecia indevidamente para verde oliva escuro (`#3B3C23`) no foco; botões de filtro e chips de gênero vinculados a `var(--pill-btn-bg)` e `var(--lib-chip-bg)` para visual 3D claro consistente.
+  - `css/pages/livro.css`: Botão "Avaliar leitor" e controles do dono migrados para `var(--pill-btn-bg)` e `var(--pill-btn-text)`; ícone de favorito e modais de proposta/avaliação adaptados ao fundo claro.
+  - `css/components.css`: Tags de conservação e pontos sobre as capas dos livros com cor branca explícita (`#FFFFFF`); chips de gêneros favoritos e modal de login obrigatório (`.login-aviso`) harmonizados.
+  - `css/base.css`: Modais suspensos com sombras táteis suaves em marrom-oliva para o tema claro.
 
 ## [1.3.0] - 2026-11-13
 ### Alterado

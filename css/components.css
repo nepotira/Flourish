@@ -529,12 +529,12 @@ html[data-theme="light"] .logo-dark {
   bottom: 10px; left: 10px;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
-  color: var(--creme);
+  color: #FFFFFF;
   padding: 4px 10px;
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   z-index: 5;
 }
 
@@ -781,9 +781,15 @@ html[data-theme="light"] .logo-dark {
 .genre-chip {
   padding: 8px 18px; border-radius: 9999px;
   border: 1.5px solid var(--border);
-  background: linear-gradient(180deg, rgba(100, 102, 66, 0.9) 0%, rgba(78, 79, 49, 0.95) 100%);
-  font-size: 0.84rem; color: var(--creme); font-weight: 700;
+  background: var(--pill-btn-bg);
+  font-size: 0.84rem; color: var(--pill-btn-text); font-weight: 700;
   cursor: pointer; transition: all 0.22s ease;
+  box-shadow: var(--shadow-3d-btn-secondary);
+}
+.genre-chip:hover:not(.active) {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
 }
 .genre-chip.active {
   background: linear-gradient(180deg, #F5ACB5 0%, #DF949D 45%, #C87882 100%);
@@ -829,4 +835,37 @@ html[data-theme="light"] .logo-dark {
   z-index: 20;
 }
 .info-tip:hover::after, .info-tip:focus-visible::after { opacity: 1; visibility: visible; }
+
+/* Aviso de login necessário (modal) */
+.login-aviso {
+  text-align: center;
+  max-width: 440px;
+}
+.login-aviso-titulo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--creme);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+.login-aviso-entrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(145deg, #EAA6B0 0%, #DF949D 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-3d-btn-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+.login-aviso-entrar:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
 

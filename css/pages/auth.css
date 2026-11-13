@@ -198,7 +198,7 @@
   height: 50px;
   padding: 0 20px;
   border-radius: var(--radius-pill);
-  background: #353620;
+  background: var(--surface-input);
   border: 1.5px solid var(--border);
   color: var(--creme);
   font-family: var(--font-body);
@@ -212,8 +212,8 @@
 .input:focus {
   outline: none;
   border-color: var(--primary);
-  background: #3B3C23;
-  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), inset 0 2.5px 5px rgba(0, 0, 0, 0.35);
+  background: var(--surface-input);
+  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), var(--shadow-clay-input);
 }
 
 .input::placeholder {
@@ -292,7 +292,7 @@
   margin-top: 2px;
   border-radius: 6px;
   border: 1.5px solid var(--border);
-  background: #353620;
+  background: var(--surface-input);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   display: flex;
@@ -437,8 +437,40 @@ html[data-theme="light"] .auth-wrap {
 
 [data-theme="light"] .auth-visual,
 html[data-theme="light"] .auth-visual {
-  background: linear-gradient(155deg, #4A4C32 0%, #353620 100%);
-  color: #FFFFFF;
+  background: linear-gradient(155deg, #FAF7EE 0%, #EFEBE0 100%);
+  border-right-color: rgba(67, 68, 42, 0.12);
+  border-bottom-color: rgba(67, 68, 42, 0.12);
+  color: #2D2E1B;
+}
+
+[data-theme="light"] .auth-logo,
+html[data-theme="light"] .auth-logo {
+  color: #2D2E1B !important;
+  text-shadow: 0 2px 8px rgba(67, 68, 42, 0.08);
+}
+
+[data-theme="light"] .auth-visual-tagline,
+html[data-theme="light"] .auth-visual-tagline {
+  color: #5A5647 !important;
+}
+
+[data-theme="light"] .auth-visual-pill,
+html[data-theme="light"] .auth-visual-pill {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F1E8 100%) !important;
+  border: 1.5px solid rgba(67, 68, 42, 0.12) !important;
+  box-shadow: 0 6px 16px -2px rgba(67, 68, 42, 0.08), inset 0 1px 1px #FFFFFF !important;
+  color: #2D2E1B !important;
+}
+
+[data-theme="light"] .auth-visual-pill span.dot,
+html[data-theme="light"] .auth-visual-pill span.dot {
+  color: #DF949D !important;
+}
+
+[data-theme="light"] .auth-deco span,
+html[data-theme="light"] .auth-deco span {
+  opacity: 0.07 !important;
+  filter: drop-shadow(0 4px 10px rgba(67, 68, 42, 0.15)) !important;
 }
 
 [data-theme="light"] .auth-box,
@@ -453,6 +485,81 @@ html[data-theme="light"] .auth-title,
 [data-theme="light"] .field label,
 html[data-theme="light"] .field label {
   color: #2D2E1B;
+}
+
+[data-theme="light"] .auth-subtitle,
+html[data-theme="light"] .auth-subtitle {
+  color: #7E7969;
+}
+
+[data-theme="light"] .auth-back-link,
+html[data-theme="light"] .auth-back-link {
+  color: #7E7969;
+}
+
+[data-theme="light"] .auth-back-link:hover,
+html[data-theme="light"] .auth-back-link:hover {
+  color: #2D2E1B;
+}
+
+[data-theme="light"] .auth-link-btn,
+html[data-theme="light"] .auth-link-btn {
+  color: #D17C87;
+}
+
+[data-theme="light"] .auth-link-btn:hover,
+html[data-theme="light"] .auth-link-btn:hover {
+  color: #BD6974;
+}
+
+[data-theme="light"] .auth-or,
+html[data-theme="light"] .auth-or {
+  color: #7E7969;
+}
+
+[data-theme="light"] .auth-or::before,
+html[data-theme="light"] .auth-or::before,
+[data-theme="light"] .auth-or::after,
+html[data-theme="light"] .auth-or::after {
+  background: rgba(67, 68, 42, 0.14);
+}
+
+[data-theme="light"] .auth-foot-link,
+html[data-theme="light"] .auth-foot-link {
+  color: #7E7969;
+}
+
+[data-theme="light"] .auth-foot-link a,
+html[data-theme="light"] .auth-foot-link a {
+  color: #D17C87;
+}
+
+[data-theme="light"] .auth-foot-link a:hover,
+html[data-theme="light"] .auth-foot-link a:hover {
+  color: #BD6974;
+}
+
+[data-theme="light"] .auth-terms,
+html[data-theme="light"] .auth-terms {
+  color: #5A5647;
+}
+
+[data-theme="light"] .auth-terms a,
+html[data-theme="light"] .auth-terms a {
+  color: #D17C87;
+}
+
+[data-theme="light"] .auth-terms input[type="checkbox"],
+html[data-theme="light"] .auth-terms input[type="checkbox"] {
+  background: #FFFFFF;
+  border-color: rgba(67, 68, 42, 0.16);
+  box-shadow: inset 0 1px 2px rgba(67, 68, 42, 0.08);
+}
+
+[data-theme="light"] .password-strength,
+html[data-theme="light"] .password-strength {
+  background: rgba(67, 68, 42, 0.10);
+  box-shadow: inset 0 1px 2px rgba(67, 68, 42, 0.15);
 }
 
 [data-theme="light"] .input,

@@ -451,3 +451,11 @@
 .anunciar-card .custom-select-option input {
   accent-color: var(--primary);
 }
+
+/* ---------- Suporte a Tema Claro (Light Theme) ---------- */
+[data-theme="light"] .anunciar-title {
+  text-shadow: none;
+}
+[data-theme="light"] .anunciar-card .custom-select-option:hover {
+  background: rgba(67, 68, 42, 0.08);
+}

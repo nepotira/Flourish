@@ -127,14 +127,14 @@
   padding: 0;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-pill);
-  background: var(--surface-card);
-  color: var(--creme);
+  background: var(--pill-btn-bg);
+  color: var(--pill-btn-text);
   cursor: pointer;
   box-shadow: var(--shadow-3d-btn-secondary);
   transition: all var(--transition-fast);
 }
 .bk-owner-btn svg { width: 24px; height: 24px; }
-.bk-owner-btn:hover { border-color: var(--primary); color: #FFFFFF; transform: translateY(-2px); }
+.bk-owner-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
 /* ---------- Embaixo: botão de troca (WhatsApp) + anunciante ---------- */
 .bk-bottom { margin: 48px 0 0 356px; }
@@ -220,14 +220,14 @@
 }
 .bk-avaliar {
   padding: 8px 22px; border: none; border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, rgba(100, 102, 66, 0.95) 0%, rgba(78, 79, 49, 0.98) 100%);
+  background: var(--pill-btn-bg);
   border: 1.5px solid var(--border);
-  color: var(--creme);
+  color: var(--pill-btn-text);
   font-family: var(--font-body); font-weight: 700; font-size: 0.92rem; cursor: pointer;
   box-shadow: var(--shadow-3d-btn-secondary);
   transition: all var(--transition-fast);
 }
-.bk-avaliar:hover { border-color: var(--primary); color: #FFFFFF; transform: translateY(-2px); }
+.bk-avaliar:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
 /* Modal "Qual livro você oferece em troca?" */
 .modal.proposta-modal {
@@ -240,7 +240,7 @@
   color: var(--text-muted); font-size: 1.3rem; line-height: 1; cursor: pointer;
   transition: color var(--transition-fast);
 }
-.proposta-fechar:hover { color: #FFFFFF; }
+.proposta-fechar:hover { color: var(--primary); }
 .proposta-titulo { margin: 0 30px 10px 0; color: var(--creme); font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; line-height: 1.25; }
 .proposta-texto { margin: 0 0 20px; color: var(--text-muted); font-size: 0.96rem; line-height: 1.5; }
 .proposta-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-height: 50vh; overflow-y: auto; }
@@ -271,7 +271,7 @@
   position: absolute; top: 18px; right: 20px; padding: 6px; border: none; background: none;
   color: var(--text-muted); font-size: 1.3rem; line-height: 1; cursor: pointer;
 }
-.avaliacao-fechar:hover { color: #FFFFFF; }
+.avaliacao-fechar:hover { color: var(--primary); }
 .avaliacao-titulo { margin: 0 28px 4px; text-align: center; color: var(--creme); font-family: var(--font-heading); font-weight: 700; font-size: 1.45rem; line-height: 1.25; }
 .avaliacao-estrelas { display: flex; justify-content: center; gap: 6px; margin: 18px 0 24px; }
 .avaliacao-estrelas button { width: 42px; height: 42px; padding: 0; border: none; background: none; cursor: pointer; }
@@ -311,4 +311,15 @@
   .bk-owner-head { flex-wrap: wrap; }
   .bk-owner-head::after { left: 0; right: 0; }
   .bk-owner-link h2 { font-size: 1.25rem; }
+}
+
+/* ---------- Suporte a Tema Claro (Light Theme) ---------- */
+[data-theme="light"] .bk-title {
+  text-shadow: none;
+}
+[data-theme="light"] .bk-fav svg {
+  fill: rgba(255, 255, 255, 0.85);
+}
+[data-theme="light"] .bk-fav.active svg {
+  fill: var(--primary);
 }

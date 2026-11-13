@@ -1,5 +1,16 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Correção de Incoerência no Login e Auditoria do Modo Claro
+
+- **Contexto**: Relato do operador com captura de tela da página de login demonstrando painel esquerdo visual com fundo escuro e textos/pílulas escuros sobrepostos (`#2D2E1B` sobre verde oliva escuro), criando uma quebra e incoerência com o lado direito do formulário. Pedido de auditoria em todas as outras telas do projeto para sanar erros visuais similares no modo claro.
+- **Ações Realizadas**:
+  1. `css/pages/auth.css`: Redesenho do painel visual (`.auth-visual`) no modo claro com fundo marfim suave (`linear-gradient(155deg, #FAF7EE 0%, #EFEBE0 100%)`), pílulas de benefícios 3D em branco e creme suave com texto nítido em Verde Oliva escuro (`#2D2E1B`), e logo floral iluminada. Links e rodapés corrigidos contra texto branco em fundo branco no hover.
+  2. `css/avaliacoes.css`: Substituição de textos beges estáticos legados (`#F6EED9`) por variáveis dinâmicas (`var(--text)` e `var(--text-muted)`), restaurando o contraste de avaliações e comentários em fundo claro.
+  3. `css/pages/biblioteca.css`: Correção do campo de busca que escurecia para `#3B3C23` no `:focus-within` em tema claro; chips de gênero e botão de filtros integrados a `var(--pill-btn-bg)` e `var(--lib-chip-bg)`.
+  4. `css/pages/livro.css`: Botão "Avaliar leitor" e controles do acervo migrados para `var(--pill-btn-bg)` e `var(--pill-btn-text)`; botões de fechar modal ajustados para foco e hover contrastantes.
+  5. `css/components.css`: Tags de conservação e pontos sobre as fotos de capa garantidas em branco puro (`#FFFFFF`); chips de gêneros favoritos e modal de login obrigatório (`.login-aviso`) harmonizados.
+- **Validação**: 11/11 testes unitários aprovados no Vitest (`npm test`). Servidor local mantido ativo e todas as 11 rotas HTML validadas com status HTTP 200.
+
 ## 13 de Novembro de 2026 — Refinamento Conciso do Modo Claro e Restauração da Flor 3D
 
 - **Contexto**: Relato do operador indicando design não conciso no modo claro e imagem da flor distorcida no Hero (`assets/logomarca-marrom.png`).
