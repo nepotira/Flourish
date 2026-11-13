@@ -6,6 +6,12 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+### Alterado
+- **Substituição de Alertas Nativos por Sistema Moderno de Toasts Soft 3D**:
+  - `js/toast.js`: Fim do uso de `alert()` do navegador; introdução de toasts flutuantes modernos no topo central da tela com ícones táteis SVG dinâmicos por contexto (`error`, `success`, `warning`, `info`), fechamento manual, auto-dismiss programado e pausa de exibição ao passar o cursor.
+  - `css/components.css`: Estilização completa do container e dos cartões de notificação com glassmorphism, relevo Claymorphic e suporte total a temas claro e escuro.
+  - Cache-busting: Inclusão de `components.css?v=1.3.4` em todas as telas da plataforma.
+
 ### Corrigido
 - **Eliminação de Duplicação da Flor e Miolo Escuro no Hero (Modo Claro)**:
   - `assets/logomarca-dark-olive.png`: Regeneração da imagem da logomarca adaptada ao modo claro remapeando o miolo central da flor 3D (`#2D2E1B` / `rgb(48, 49, 29)`) além do texto "Flowrish", combinando perfeitamente com a flor do logotipo da navbar superior.

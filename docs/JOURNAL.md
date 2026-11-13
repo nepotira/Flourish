@@ -1,5 +1,15 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Modernização dos Avisos e Notificações (Eliminação do Alert Nativo)
+
+- **Contexto**: Relato do operador com captura de tela demonstrando o alerta nativo e cinzento do navegador (`nepotira.github.io diz: Erro ao entrar`) ao falhar a autenticação. Solicitação para substituir o aviso nativo por notificações modernas integradas ao design do site (Claymorphism Soft 3D).
+- **Ações Realizadas**:
+  1. `js/toast.js`: Substituição completa de `alert()` por um sistema moderno de notificações flutuantes táteis (`showToast`), posicionado no topo central da tela, com crachás de ícones SVG táteis (`error`, `success`, `warning`, `info`), inferência semântica inteligente de tipo por palavras-chave, sanitização HTML segura, suporte a pausa de timeout ao passar o cursor (`mouseenter`/`mouseleave`) e fechamento manual ou auto-dismiss suave.
+  2. `css/components.css`: Estilização completa das classes `.toast-container`, `.toast`, `.toast-icon-badge`, `.toast-title`, `.toast-desc`, `.toast-close` e animações 3D `toastSlideDown` e `toastSlideUpFade`, harmonizadas perfeitamente nos modos escuro e claro com sombras táteis e blur de vidro.
+  3. `tests/unit/toast.test.js`: Criação de suíte de testes unitários cobrindo exportações, inferência semântica de tipos de feedback, segurança em ambiente headless e presença dos seletores no CSS.
+  4. Cache-busting: Atualização de `components.css?v=1.3.4` em todas as 11 páginas HTML do projeto.
+- **Validação**: 18/18 testes unitários aprovados no Vitest (`npm test`).
+
 ## 13 de Novembro de 2026 — Correção da Flor Hero: Miolo Escuro e Eliminação de Duplicação
 
 - **Contexto**: Relato do operador indicando duplicação da flor na tela inicial (duas flores lado a lado no Hero) e ausência de alteração na cor do miolo central da flor no modo claro, em dissonância com o comportamento do logo da navbar onde tanto a tipografia quanto o miolo da flor alternam entre creme e verde oliva escuro (`#2D2E1B`).
