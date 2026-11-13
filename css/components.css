@@ -57,20 +57,16 @@
   padding: 0 !important;
 }
 
-.logo-light, .hero-logo-light { display: none !important; }
-.logo-dark, .hero-logo-dark { display: block !important; }
+.logo-light { display: none !important; }
+.logo-dark { display: block !important; }
 
 [data-theme="light"] .logo-light,
-html[data-theme="light"] .logo-light,
-[data-theme="light"] .hero-logo-light,
-html[data-theme="light"] .hero-logo-light {
+html[data-theme="light"] .logo-light {
   display: block !important;
 }
 
 [data-theme="light"] .logo-dark,
-html[data-theme="light"] .logo-dark,
-[data-theme="light"] .hero-logo-dark,
-html[data-theme="light"] .hero-logo-dark {
+html[data-theme="light"] .logo-dark {
   display: none !important;
 }
 
@@ -123,16 +119,29 @@ html[data-theme="light"] .hero-logo-dark {
   z-index: 1; /* fica sobre o slider */
 }
 .nav-links a:hover {
-  color: #FFFFFF;
+  color: var(--creme, #FFFFFF);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
 }
+[data-theme="light"] .nav-links a:hover {
+  color: #2D2E1B;
+  background: rgba(67, 68, 42, 0.08);
+}
 .nav-links a.active {
-  color: #FFFFFF;
-  text-shadow: 0 1px 2px rgba(56, 25, 29, 0.3);
-  /* background e box-shadow removidos — o slider faz isso */
-  background: transparent;
-  box-shadow: none;
-  border: none;
+  color: #FFFFFF !important;
+  background: linear-gradient(180deg, #F5ACB5 0%, #DF949D 45%, #C87882 100%) !important;
+  box-shadow: 0 6px 16px -2px rgba(223, 148, 157, 0.55),
+              inset 0 1px 1.5px rgba(255, 255, 255, 0.7) !important;
+  text-shadow: 0 1px 2px rgba(56, 25, 29, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.nav-login {
+  padding: 9px 24px !important;
+  font-size: 0.94rem !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
 }
 
 .nav-search {

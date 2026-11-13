@@ -432,47 +432,50 @@
 /* ---------- Suporte a Tema Claro (Light Theme) ---------- */
 [data-theme="light"] .auth-wrap,
 html[data-theme="light"] .auth-wrap {
-  background: #F7EFDA;
+  background: #F7F5EE;
 }
 
 [data-theme="light"] .auth-visual,
 html[data-theme="light"] .auth-visual {
-  background: linear-gradient(155deg, #7A7C52 0%, #5C5E3D 100%);
+  background: linear-gradient(155deg, #4A4C32 0%, #353620 100%);
   color: #FFFFFF;
 }
 
 [data-theme="light"] .auth-box,
 html[data-theme="light"] .auth-box {
-  background: #ECE5CF;
-  border-color: rgba(67, 68, 42, 0.2);
-  box-shadow: 0 16px 36px rgba(67, 68, 42, 0.15), inset 0 2px 2px rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  border-color: rgba(67, 68, 42, 0.12);
+  box-shadow: 0 16px 36px rgba(67, 68, 42, 0.08), inset 0 2px 2px rgba(255, 255, 255, 0.95);
 }
 
 [data-theme="light"] .auth-title,
 html[data-theme="light"] .auth-title,
 [data-theme="light"] .field label,
 html[data-theme="light"] .field label {
-  color: #353620;
+  color: #2D2E1B;
 }
 
 [data-theme="light"] .input,
 html[data-theme="light"] .input {
-  background: #E0D9C0;
-  border-color: rgba(67, 68, 42, 0.2);
-  color: #353620;
+  background: #FFFFFF;
+  border-color: rgba(67, 68, 42, 0.14);
+  color: #2D2E1B;
+  box-shadow: inset 0 2px 4px rgba(67, 68, 42, 0.08);
 }
 
 [data-theme="light"] .input:focus,
 html[data-theme="light"] .input:focus {
-  background: #E8E2CB;
+  background: #FFFFFF;
   border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.25), inset 0 2px 4px rgba(67, 68, 42, 0.08);
 }
 
 [data-theme="light"] .btn-google,
 html[data-theme="light"] .btn-google {
   background: #FFFFFF;
-  border-color: rgba(67, 68, 42, 0.2);
-  color: #353620;
+  border-color: rgba(67, 68, 42, 0.14);
+  color: #2D2E1B;
+  box-shadow: 0 4px 12px rgba(67, 68, 42, 0.08);
 }
 
 /* ---------- Responsividade (< 900px) ---------- */

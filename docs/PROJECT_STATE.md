@@ -32,5 +32,5 @@
 ---
 
 ## 3. Estado das Suítes de Teste
-- **Testes Unitários (Vitest)**: 10/10 testes aprovados em `tests/unit/` (validadores, domínio e contratos de tema).
+- **Testes Unitários (Vitest)**: 11/11 testes aprovados em `tests/unit/` (validadores, domínio e contratos de tema).
 - **Regras do Firestore**: Cobertura em `tests/rules/firestore.rules.test.js`.

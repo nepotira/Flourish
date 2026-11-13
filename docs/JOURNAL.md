@@ -1,5 +1,17 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Refinamento Conciso do Modo Claro e Restauração da Flor 3D
+
+- **Contexto**: Relato do operador indicando design não conciso no modo claro e imagem da flor distorcida no Hero (`assets/logomarca-marrom.png`).
+- **Ações Realizadas**:
+  1. `index.html` & `css/pages/home.css`: Restauração da autêntica obra de arte 3D Soft Clay (`assets/logomarca.png`) com sombra suave adaptada e remoção definitiva do rascunho com contorno distorcido.
+  2. `assets/logo-horizontal-dark-olive.png`: Criação de asset de alta fidelidade em Verde Oliva escuro (`#2D2E1B`) preservando o antialiasing e a flor original para o modo claro.
+  3. `js/navbar.js`: Troca para a nova logo escura no modo claro e adição de classe/estilo 3D primário para o botão "Entrar" (`.btn-primary.nav-login`).
+  4. `css/variables.css`: Harmonização concisa da paleta do modo claro (marfim `#F7F5EE`, texto `#2D2E1B`, botões em harmonia tátil e superfícies alinhadas ao DESIGN.md).
+  5. `css/base.css`: Redesenho do `.btn-secondary` no modo claro para pílula 3D creme/branco suave com texto escuro, eliminando o bloco verde oliva pesado.
+  6. `css/pages/auth.css` & `css/pages/biblioteca.css`: Ajuste de caixas de formulário, inputs brancos e chips de filtro para o tema claro.
+- **Validação**: 11/11 testes unitários aprovados no Vitest (`npm test`). Servidor local mantido ativo na porta 8080.
+
 ## 13 de Novembro de 2026 — Correção Geral de Contraste e Modo Claro
 
 - **Contexto**: Relato do operador com captura de tela demonstrando que, ao ativar o modo claro, a Navbar permanecia em verde oliva escuro enquanto a página ficava clara, títulos com `color: var(--creme)` ficavam invisíveis (creme sobre bege) e a flor/tipografia do Hero perdiam legibilidade.

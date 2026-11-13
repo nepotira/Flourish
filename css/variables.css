@@ -190,76 +190,76 @@
 }
 
 [data-theme="light"] {
-  --verde-oliva-dark: #EFE8D6;
-  --verde-oliva-bg: #F7F3E8;
+  --verde-oliva-dark: #F0ECE1;
+  --verde-oliva-bg: #F7F5EE;
   --verde-oliva-surface: #FFFFFF;
   --verde-oliva-card: #FFFFFF;
-  --verde-oliva-elevated: #FAF6ED;
-  --verde-oliva-border: rgba(67, 68, 42, 0.16);
+  --verde-oliva-elevated: #FAF8F2;
+  --verde-oliva-border: rgba(67, 68, 42, 0.12);
 
-  --bg: #F8F4EA;
+  --bg: #F7F5EE;
   --bg-alt: #FFFFFF;
   --bg-elevated: #FFFFFF;
   --surface: #FFFFFF;
   --surface-card: #FFFFFF;
-  --surface-elevated: #FAF6ED;
-  --border: rgba(67, 68, 42, 0.18);
+  --surface-elevated: #FAF8F2;
+  --border: rgba(67, 68, 42, 0.12);
 
-  /* Tipografia de alto contraste para o Modo Claro */
-  --creme: #353620; /* Inversão essencial: referências a --creme tornam-se Verde Oliva escuro */
-  --creme-light: #222314;
-  --text: #353620;
-  --text-marrom: #353620;
-  --text-marrom-light: #5E5B49;
-  --text-muted: #7A7663;
+  /* Tipografia nítida e acolhedora */
+  --creme: #2D2E1B;
+  --creme-light: #202113;
+  --text: #2D2E1B;
+  --text-marrom: #2D2E1B;
+  --text-marrom-light: #5A5647;
+  --text-muted: #7E7969;
   --text-dark: #1E1F11;
   --text-inverse: #FBF6EB;
 
   /* Superfícies & Controles */
   --surface-input: #FFFFFF;
-  --surface-chip: #EBE4D4;
-  --text-chip: #353620;
+  --surface-chip: #F0EBE0;
+  --text-chip: #2D2E1B;
 
   /* Navbar */
-  --navbar-bg: rgba(248, 244, 234, 0.94);
-  --navbar-border: rgba(67, 68, 42, 0.18);
-  --navbar-capsule-bg: rgba(235, 227, 210, 0.85);
-  --navbar-capsule-border: rgba(67, 68, 42, 0.15);
-  --navbar-capsule-text: #4F4C39;
+  --navbar-bg: rgba(247, 245, 238, 0.90);
+  --navbar-border: rgba(67, 68, 42, 0.08);
+  --navbar-capsule-bg: rgba(67, 68, 42, 0.05);
+  --navbar-capsule-border: rgba(67, 68, 42, 0.08);
+  --navbar-capsule-text: #454332;
   --navbar-search-bg: #FFFFFF;
-  --navbar-search-text: #353620;
-  --pill-btn-bg: linear-gradient(180deg, #EBE4D4 0%, #DDD5C2 100%);
-  --pill-btn-text: #353620;
+  --navbar-search-text: #2D2E1B;
+  --pill-btn-bg: linear-gradient(180deg, #FFFFFF 0%, #F2EDE2 100%);
+  --pill-btn-text: #2D2E1B;
 
   /* Seção Hero no Modo Claro */
-  --hero-bg: linear-gradient(180deg, #F8F4EA 0%, #EDE6D6 100%);
+  --hero-bg: linear-gradient(180deg, #F7F5EE 0%, #EFEBE0 100%);
   --hero-h1-color: #2D2E1B;
-  --hero-title-shadow: 0 1px 2px rgba(67, 68, 42, 0.08);
-  --eyebrow-bg: linear-gradient(180deg, rgba(209, 124, 135, 0.20) 0%, rgba(209, 124, 135, 0.10) 100%);
-  --eyebrow-text: #96404C;
-  --eyebrow-border: rgba(209, 124, 135, 0.38);
+  --hero-title-shadow: none;
+  --eyebrow-bg: rgba(255, 255, 255, 0.9);
+  --eyebrow-text: #D17C87;
+  --eyebrow-border: rgba(209, 124, 135, 0.35);
 
   /* Rodapé no Modo Claro */
-  --footer-bg: #EBE4D2;
-  --footer-text: #353620;
-  --footer-title: #222314;
-  --footer-muted: #6B6755;
-  --footer-border: rgba(67, 68, 42, 0.15);
+  --footer-bg: #EFEBE0;
+  --footer-text: #2D2E1B;
+  --footer-title: #202113;
+  --footer-muted: #6B6655;
+  --footer-border: rgba(67, 68, 42, 0.10);
 
-  --primary: #D17C87;
-  --primary-hover: #BD6974;
+  --primary: #DF949D;
+  --primary-hover: #D3838D;
   --on-primary: #FFFFFF;
 
-  --secondary: #353620;
+  --secondary: #2D2E1B;
   --on-secondary: #FFFFFF;
 
   --tertiary: #E3BBBD;
   --on-tertiary: #422629;
 
-  --shadow-3d-card: 0 14px 30px -6px rgba(67, 68, 42, 0.12), 0 2px 8px rgba(67, 68, 42, 0.06), inset 0 1.5px 2px rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(67, 68, 42, 0.04);
-  --shadow-clay-card: 0 14px 30px -6px rgba(67, 68, 42, 0.12), 0 2px 8px rgba(67, 68, 42, 0.06), inset 0 1.5px 2px rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(67, 68, 42, 0.04);
-  --shadow-3d-btn-primary: 0 12px 26px -4px rgba(209, 124, 135, 0.5), inset 0 1.5px 2px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(0, 0, 0, 0.12);
-  --shadow-3d-btn-secondary: 0 10px 22px -4px rgba(67, 68, 42, 0.28), inset 0 1.5px 2px rgba(255, 255, 255, 0.35), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
-  --shadow-3d-input: inset 0 2px 4px rgba(67, 68, 42, 0.12), 0 1px 2px rgba(255, 255, 255, 0.8);
-  --shadow-clay-input: inset 0 2px 4px rgba(67, 68, 42, 0.12), 0 1px 2px rgba(255, 255, 255, 0.8);
+  --shadow-3d-card: 0 12px 28px -6px rgba(67, 68, 42, 0.09), 0 2px 6px rgba(67, 68, 42, 0.04), inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+  --shadow-clay-card: 0 12px 28px -6px rgba(67, 68, 42, 0.09), 0 2px 6px rgba(67, 68, 42, 0.04), inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+  --shadow-3d-btn-primary: 0 10px 22px -4px rgba(223, 148, 157, 0.5), inset 0 1.5px 2px rgba(255, 255, 255, 0.75), inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+  --shadow-3d-btn-secondary: 0 8px 18px -4px rgba(67, 68, 42, 0.10), inset 0 1.5px 2px #FFFFFF, inset 0 -1.5px 2px rgba(67, 68, 42, 0.05);
+  --shadow-3d-input: inset 0 2px 4px rgba(67, 68, 42, 0.08), 0 1px 2px rgba(255, 255, 255, 0.9);
+  --shadow-clay-input: inset 0 2px 4px rgba(67, 68, 42, 0.08), 0 1px 2px rgba(255, 255, 255, 0.9);
 }

@@ -7,13 +7,15 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 ### Corrigido
-- **Correção Geral e Harmonização do Modo Claro em Todo o Projeto**:
-  - `css/variables.css`: Inversão correta de contraste para tokens globais em `[data-theme="light"]` (`--creme` remapeado para `#353620` em contextos de texto), eliminando texto branco/creme sobre fundo bege.
-  - `css/components.css`: Navbar adaptável com fundo claro suave (`--navbar-bg`), cápsula de links com contraste (`--navbar-capsule-bg`), busca tátil com fundo branco e alternância automática da logo para `logo-horizontal-marrom.png` no tema claro.
-  - `css/components.css`: Rodapé adaptativo com `--footer-bg` e `--footer-text`, prevenindo texto escuro sobre fundo escuro.
-  - `index.html` & `css/pages/home.css`: Seção Hero reestruturada com `logomarca-marrom.png` no modo claro, título `h1` em verde oliva escuro legível (`--hero-h1-color`) e badge com contraste rose.
-  - `css/base.css`: Botão secundário (`.btn-secondary`) otimizado no modo claro com gradiente verde oliva e texto branco tátil.
-  - Telas internas (`cadastrar-livro.css`, `livro.css`, `perfil.css`, `anunciante.css`, `ajuda.css`, `biblioteca.css`): Substituição de `#353620` estático por `var(--surface-input)` e `var(--surface-chip)` para inputs e badges com visual limpo e legível em ambos os temas.
+- **Refinamento e Harmonização Visual Concisa do Modo Claro e Hero 3D**:
+  - `index.html`: Restauração da autêntica arte 3D da flor Claymorphism (`assets/logomarca.png`) no Hero, removendo o gráfico com contorno distorcido (`logomarca-marrom.png`).
+  - `assets/logo-horizontal-dark-olive.png`: Geração da versão de alta resolução da logomarca horizontal em Verde Oliva escuro (`#2D2E1B`) com antialiasing e iluminação 3D da flor preservados.
+  - `js/navbar.js`: Integração da nova logo escura no modo claro e estilização do botão "Entrar" com classe e relevo 3D tátil (`.btn-primary.nav-login`).
+  - `css/variables.css`: Harmonização concisa da paleta do modo claro (`#F7F5EE` marfim, `#2D2E1B` tipografia nítida, `#FFFFFF` para superfícies/inputs com sombras táteis sutis).
+  - `css/base.css`: Redesenho do botão secundário (`.btn-secondary`) no modo claro para pílula 3D em creme/branco suave com texto escuro, eliminando o bloco verde escuro pesado.
+  - `css/components.css`: Estilização dedicada para `.nav-login`, links ativos e contraste no modo claro.
+  - `css/pages/home.css`: Ajuste de iluminação ambiente do Hero no modo claro (brilho suave rosa e creme sem manchas turvas) e sombra suave da flor 3D.
+  - `css/pages/auth.css` & `css/pages/biblioteca.css`: Harmonização de cartões, formulários e chips de filtro para acabamento limpo em branco e marfim.
 
 ## [1.3.0] - 2026-11-13
 ### Alterado

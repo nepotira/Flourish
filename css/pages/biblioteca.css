@@ -16,13 +16,13 @@
 [data-theme="light"] .library-page,
 html[data-theme="light"] .library-page {
   --lib-search-bg: #FFFFFF;
-  --lib-search-border: rgba(67, 68, 42, 0.2);
-  --lib-search-text: #353620;
-  --lib-search-placeholder: #7B795A;
+  --lib-search-border: rgba(67, 68, 42, 0.12);
+  --lib-search-text: #2D2E1B;
+  --lib-search-placeholder: #7E7969;
   --lib-panel-bg: #FFFFFF;
-  --lib-chip-bg: linear-gradient(180deg, #EBE4D4 0%, #DDD5C2 100%);
-  --lib-chip-border: rgba(67, 68, 42, 0.2);
-  --lib-chip-text: #353620;
+  --lib-chip-bg: linear-gradient(180deg, #FFFFFF 0%, #F2EDE2 100%);
+  --lib-chip-border: rgba(67, 68, 42, 0.12);
+  --lib-chip-text: #2D2E1B;
 }
 
 .lib-main {

@@ -108,6 +108,30 @@
   animation: floatIllustration 6s ease-in-out infinite;
 }
 
+[data-theme="light"] .hero-logomarca,
+html[data-theme="light"] .hero-logomarca {
+  filter: drop-shadow(0 16px 36px rgba(67, 68, 42, 0.16));
+}
+
+[data-theme="light"] .hero::before,
+html[data-theme="light"] .hero::before {
+  background: rgba(223, 148, 157, 0.15);
+  opacity: 0.8;
+  filter: blur(60px);
+}
+
+[data-theme="light"] .hero::after,
+html[data-theme="light"] .hero::after {
+  background: rgba(247, 239, 218, 0.6);
+  opacity: 0.9;
+  filter: blur(80px);
+}
+
+[data-theme="light"] .hero-copy .eyebrow,
+html[data-theme="light"] .hero-copy .eyebrow {
+  box-shadow: 0 6px 18px -3px rgba(223, 148, 157, 0.25), inset 0 1px 1.5px #FFFFFF;
+}
+
 @keyframes floatIllustration {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
