@@ -14,7 +14,7 @@
 - **Mecanismo de Troca**: Conexão ágil e descentralizada via WhatsApp (`whatsappUrl`) combinando livros anunciados no acervo.
 - **Avaliações**: Sistema livre de reputação de perfil (`ratings`), permitindo que leitores avaliem uns aos outros após a troca com réplica do dono do perfil.
 - **Design System**: Claymorphism Soft 3D com paleta oliva escuro (`#43442A` / `#353620`), rosa antigo (`#DF949D`) e creme (`#F7EFDA`), suporte a temas claro/escuro persistente e sombras suaves `inset` e `drop-shadow`.
-- **Harmonização Visual**: Hero 3D com logomarca floral iluminada (`assets/logomarca.png`), grade de 4 passos, carrossel dinâmico, 6 benefícios com GIFs animados e banner CTA integrados à troca por WhatsApp e gestão de acervo.
+- **Harmonização Visual**: Hero 3D com logomarca floral iluminada (`assets/logomarca.png` e `assets/logomarca-dark-olive.png`), sincronização canônica de imagem única com adaptação dinâmica tanto da tipografia quanto do miolo central da flor no modo claro, grade de 4 passos, carrossel dinâmico, 6 benefícios com GIFs animados e banner CTA integrados à troca por WhatsApp e gestão de acervo.
 
 ---
 
