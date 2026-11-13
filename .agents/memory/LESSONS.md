@@ -18,3 +18,7 @@
 
 5. **Repositório Primário Independente (`nepotira/Flowrish`)**:
    - Toda alteração, desenvolvimento, ramo e entrega do projeto deve obrigatoriamente ser originada e sincronizada no repositório `nepotira/Flowrish` (`origin`). O antigo fork no GitHub permanece intacto exclusivamente como ponto de restauração/backup.
+
+6. **Ciclo de Servidor Local vs. GitHub Pages**:
+   - Durante desenvolvimento ativo e testes iterativos locais, manter o servidor `localhost:8080` rodando para permitir a pré-visualização imediata.
+   - Assim que o usuário aprovar e solicitar a aplicação das mudanças no repositório (com commit, merge na `main` e disparo do CI/CD), o processo do `localhost` pode ser encerrado, pois a visualização passa a ser feita diretamente na URL de produção do GitHub Pages: `https://nepotira.github.io/Flowrish/`.
