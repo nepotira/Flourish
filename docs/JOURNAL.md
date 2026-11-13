@@ -1,5 +1,14 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Alternância de Cor do Texto Flowrish no Hero
+
+- **Contexto**: Relato do operador com captura de tela demonstrando que, no modo claro, o texto "Flowrish" sob a grande flor 3D do Hero permanecia em cor creme clara (`#F6EED9`), perdendo o contraste com o fundo marfim, enquanto na navbar o texto já alternava corretamente para verde oliva escuro.
+- **Ações Realizadas**:
+  1. `assets/logomarca-dark-olive.png`: Geração de asset preservando 100% da flor 3D suave original e remapeando os pixels das letras de "Flowrish" para Verde Oliva escuro (`#2D2E1B` / `rgb(48, 49, 29)`), idêntico ao logotipo escuro da navbar.
+  2. `index.html`: Inclusão de `.hero-logo-dark` (`logomarca.png`) e `.hero-logo-light` (`logomarca-dark-olive.png`).
+  3. `css/components.css`: Alternância visual entre `.hero-logo-dark` no modo escuro e `.hero-logo-light` no modo claro.
+- **Validação**: 11/11 testes unitários aprovados no Vitest (`npm test`). Servidor local mantido ativo na porta 8080.
+
 ## 13 de Novembro de 2026 — Correção de Incoerência no Login e Auditoria do Modo Claro
 
 - **Contexto**: Relato do operador com captura de tela da página de login demonstrando painel esquerdo visual com fundo escuro e textos/pílulas escuros sobrepostos (`#2D2E1B` sobre verde oliva escuro), criando uma quebra e incoerência com o lado direito do formulário. Pedido de auditoria em todas as outras telas do projeto para sanar erros visuais similares no modo claro.

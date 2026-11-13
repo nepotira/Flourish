@@ -7,6 +7,9 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 ### Corrigido
+- **Alternância Automática da Cor do Texto "Flowrish" no Hero (Modo Claro/Escuro)**:
+  - `assets/logomarca-dark-olive.png`: Geração do asset do Hero em alta definição preservando 100% da flor 3D suave original e mapeando o texto "Flowrish" para Verde Oliva escuro (`#2D2E1B` / `#30311D`), idêntico à tipografia do logo da navbar.
+  - `index.html` & `css/components.css`: Suporte a alternância automática entre `.hero-logo-dark` (texto claro) no modo escuro e `.hero-logo-light` (texto escuro) no modo claro, resolvendo o texto que ficava em creme desbotado sobre o fundo marfim.
 - **Correção Abrangente do Modo Claro (Autenticação, Avaliações, Biblioteca e Detalhes do Livro)**:
   - `css/pages/auth.css`: Redesenho completo do painel esquerdo (`.auth-visual`) no modo claro com fundo marfim acolhedor (`#FAF7EE` a `#EFEBE0`), tipografia nítida em Verde Oliva escuro (`#2D2E1B`), pílulas de benefícios 3D em branco/creme suave e eliminação definitiva do contraste escuro-sobre-escuro na tela de login, cadastro e redefinição de senha. Links e botões de rodapé corrigidos para não desaparecerem em branco no hover.
   - `css/avaliacoes.css`: Substituição de textos beges estáticos legados (`#F6EED9`) por variáveis semânticas `var(--text)` e `var(--text-muted)`, restaurando legibilidade total das avaliações de perfil no modo claro.
