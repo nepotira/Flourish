@@ -15,3 +15,6 @@
 4. **Padrão Completo para Repositório Público (Regra de Excelência)**:
    - Nenhum repositório público pode ficar sem os artefatos fundamentais de governança: `README.md` visual e detalhado, `LICENSE` oficial com copyright, `NOTICE`, `CONTRIBUTING.md`, `SECURITY.md`, `THIRD_PARTY_LICENSES.md`, `AGENTS.md` e templates de Issue/PR em `.github/`.
    - Entregas de versão SemVer exigem tag anotada e publicação formal de Release no GitHub via `gh release create` contendo notas de release derivadas do `CHANGELOG.md`.
+
+5. **Repositório Primário Independente (`nepotira/Flowrish`)**:
+   - Toda alteração, desenvolvimento, ramo e entrega do projeto deve obrigatoriamente ser originada e sincronizada no repositório `nepotira/Flowrish` (`origin`). O antigo fork no GitHub permanece intacto exclusivamente como ponto de restauração/backup.

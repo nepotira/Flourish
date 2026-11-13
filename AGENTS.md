@@ -23,10 +23,11 @@ Plataforma colaborativa e sustentável para troca de livros físicos entre leito
 
 ## Regras Essenciais
 1. **Zero Mocks**: Proibido qualquer array simulado ou dado fictício em código de produção. Fallbacks devem ser estáticos e locais (`assets/sem-capa.svg`).
-2. **Conventional Commits**: `tipo(escopo): descrição imperativa em inglês ou português`.
-3. **SemVer 2.0.0**: Toda release segue SemVer formal (`vMAJOR.MINOR.PATCH`). O histórico é mantido em `CHANGELOG.md` no padrão Keep a Changelog.
-4. **Governança e Memória**: Atualizar `.agents/memory/STATE.md`, `HANDOFF.md` e `LESSONS.md` a cada ciclo relevante.
-5. **Segurança**: Nunca comitar credenciais, chaves privadas ou tokens no Git.
+2. **Repositório Primário Autônomo**: Toda alteração, commit, branch e PR deve ser realizada estritamente no repositório `nepotira/Flowrish` (`origin`), desvinculado de forks.
+3. **Conventional Commits**: `tipo(escopo): descrição imperativa em inglês ou português`.
+4. **SemVer 2.0.0**: Toda release segue SemVer formal (`vMAJOR.MINOR.PATCH`). O histórico é mantido em `CHANGELOG.md` no padrão Keep a Changelog.
+5. **Governança e Memória**: Atualizar `.agents/memory/STATE.md`, `HANDOFF.md` e `LESSONS.md` a cada ciclo relevante.
+6. **Segurança**: Nunca comitar credenciais, chaves privadas ou tokens no Git.
 
 ## Mapa da Documentação
 - `README.md` — Apresentação oficial, funcionalidades, instalação e uso.
