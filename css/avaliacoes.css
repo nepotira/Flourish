@@ -18,7 +18,7 @@
 .bk-review-empty { margin: 0; font-size: 0.95rem; color: #F6EED9; }
 
 /* Resposta do dono do perfil, embaixo da avaliação */
-.bk-review-resposta { margin: 12px 0 0 8px; padding: 10px 16px; border-left: 3px solid #C97B96; border-radius: 0 16px 16px 0; background: rgba(246, 238, 217, 0.08); color: #F6EED9; }
+.bk-review-resposta { margin: 12px 0 0 8px; padding: 10px 16px; border-left: 3px solid var(--rose-clay, #DF949D); border-radius: 0 16px 16px 0; background: rgba(246, 238, 217, 0.08); color: #F6EED9; }
 .bk-review-resposta strong { display: block; font-size: 0.9rem; }
 .bk-review-resposta p { margin: 4px 0 0; font-size: 0.95rem; color: #F6EED9; overflow-wrap: anywhere; }
 .bk-responder {
@@ -38,4 +38,4 @@
 .bk-resposta-form textarea:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
 .bk-resposta-acoes { display: flex; justify-content: flex-end; align-items: center; gap: 14px; }
 .bk-resposta-acoes .bk-responder { margin-left: 0; }
-.bk-resposta-cancelar { margin-top: 10px; padding: 0; border: none; background: none; color: #F6EED9; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.88rem; text-decoration: underline; cursor: pointer; }
+.bk-resposta-cancelar { margin-top: 10px; padding: 0; border: none; background: none; color: #F6EED9; font-family: var(--font-body); font-weight: 700; font-size: 0.88rem; text-decoration: underline; cursor: pointer; }

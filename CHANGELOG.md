@@ -6,6 +6,14 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+### Alterado
+- **Harmonização Integral de Telas e Subpáginas com Claymorphism Soft 3D**:
+  - `perfil.html` / `css/pages/perfil.css`: Eliminação do fundo bege plano residual (`--pf-cream`) e tipografia legada (`Oswald`, `Open Sans`, `DM Sans`); reconstrução com cabeçalho em cartão Claymorphic elevado, badge de localização escavado em relevo interno (`#353620`), abas estilo pill tátil com gradiente rosa ativo (`#EAA6B0` -> `#DF949D`) e formulário de configurações com inputs 3D e botão primário tátil.
+  - `cadastrar-livro.html` / `css/pages/cadastrar-livro.css`: Reconstrução completa dos cartões de formulário, upload de capa com drag & drop com relevo suave, inputs escavados com sombras de profundidade e botões de ação Claymorphism.
+  - `livro.html` / `css/pages/livro.css`: Correção de contraste de textos e metadados com `var(--creme)` e `var(--text-muted)`, cartão de anunciante elevado em Claymorphic e botão de combinação de troca pelo WhatsApp com relevo tátil.
+  - `ajuda.html` / `css/pages/ajuda.css`: Cartão de contato harmonizado em relevo suave, inputs com profundidade tátil e botão primário 3D.
+  - `anunciante.html` / `css/pages/anunciante.css`: Padronização de espaçamentos e harmonização de badges e títulos.
+  - `css/avaliacoes.css`: Substituição de fontes e cores legadas por tokens do design system (`var(--rose-clay)` e `var(--font-body)`).
 ### Corrigido
 - **Restauração e Harmonização do Claymorphism Soft 3D**:
   - Restauração integral da página inicial autêntica com o Hero 3D, selo tátil em relevo, logomarca tridimensional iluminada (`assets/logomarca.png`), grade de 4 passos, carrossel de livros e banner CTA.

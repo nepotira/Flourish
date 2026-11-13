@@ -1,33 +1,134 @@
-/* Central de ajuda (ajuda.html) */
+/* ============================================================
+   Flowrish — Central de Ajuda (ajuda.html)
+   100% Harmonizado com Claymorphism Soft 3D Design System
+   Paleta: Verde Oliva (#43442A / #353620), Rosa Antigo (#DF949D) & Creme (#F7EFDA)
+   ============================================================ */
+
 .ajuda-page {
-  display: flex; justify-content: center;
-  padding: calc(var(--header-h) + 48px) 16px 64px;
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--header-h) + 40px) 16px 80px;
+  background: var(--bg);
+  min-height: calc(100vh - var(--header-h));
 }
+
 .ajuda-card {
-  width: 100%; max-width: 600px; padding: 30px 34px 32px; border-radius: 30px;
-  background: #4B4C33; color: #F5EEDA; font-family: 'DM Sans', sans-serif;
+  width: 100%;
+  max-width: 620px;
+  padding: clamp(30px, 5vw, 44px);
+  border-radius: 32px;
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-clay-card);
+  color: var(--creme);
+  font-family: var(--font-body);
+  box-sizing: border-box;
 }
-.ajuda-titulo { margin: 0 0 16px; text-align: center; color: #F5EEDA; font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
-.ajuda-texto { margin: 0 0 24px; color: #F5EEDA; font-size: 1.05rem; line-height: 1.5; }
-.ajuda-label { display: block; margin: 0 0 8px 14px; color: #F5EEDA; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+
+.ajuda-titulo {
+  margin: 0 0 10px;
+  text-align: center;
+  color: var(--creme);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ajuda-texto {
+  margin: 0 0 28px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.ajuda-label {
+  display: block;
+  margin: 0 0 8px 4px;
+  color: var(--creme);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .ajuda-input {
-  display: block; width: 100%; height: 40px; margin: 0 0 22px; padding: 0 18px; border: none; border-radius: 999px;
-  background: #85836A; color: #F5EEDA; font: inherit; font-size: 1rem;
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0 0 20px;
+  padding: 0 20px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: #353620;
+  color: var(--creme);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-clay-input);
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
 }
-.ajuda-input:focus { outline: 2px solid #C97B96; outline-offset: 2px; }
-.ajuda-mensagem { height: 150px; margin-bottom: 26px; padding: 14px 20px; border-radius: 26px; resize: vertical; line-height: 1.5; }
+
+.ajuda-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #3B3C23;
+  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), inset 0 2.5px 5px rgba(0, 0, 0, 0.35);
+}
+
+.ajuda-mensagem {
+  height: 140px;
+  margin-bottom: 28px;
+  padding: 14px 20px;
+  border-radius: 22px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
 .ajuda-enviar {
-  display: block; width: min(300px, 100%); margin: 0 auto; padding: 7px 20px; border: none; border-radius: 999px;
-  background: #C97B96; color: #F5EEDA; font: inherit; font-size: 1.1rem; font-weight: 700; line-height: 1.2; cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  margin: 0 auto;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(145deg, #EAA6B0 0%, #DF949D 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: var(--shadow-3d-btn-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
-.ajuda-enviar:hover { background: #B96A86; }
-.ajuda-enviar:disabled { opacity: 0.6; cursor: wait; }
+
+.ajuda-enviar:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 32px -4px rgba(223, 148, 157, 0.7);
+}
+
+.ajuda-enviar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
 
 @media (max-width: 560px) {
-  .ajuda-page { padding-top: calc(var(--header-h) + 20px); padding-bottom: 80px; }
-  .ajuda-card { padding: 24px 18px; border-radius: 24px; }
-  .ajuda-titulo { font-size: 1.4rem; }
-  .ajuda-texto { font-size: 1rem; }
-  .ajuda-mensagem { height: 130px; border-radius: 22px; }
-  .ajuda-enviar { width: 100%; height: 48px; }
+  .ajuda-page {
+    padding-top: calc(var(--header-h) + 20px);
+    padding-bottom: 80px;
+  }
+  .ajuda-card {
+    padding: 26px 20px 24px;
+    border-radius: 24px;
+  }
+  .ajuda-titulo {
+    font-size: 1.8rem;
+  }
 }
