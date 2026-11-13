@@ -28,3 +28,18 @@ if (featured.length > 3) {
 }
 
 initRevealAnimations();
+
+const heroLogo = document.getElementById('heroLogomarca');
+const syncHeroLogo = (theme) => {
+  if (!heroLogo) return;
+  const target = theme === 'light' ? 'assets/logomarca-dark-olive.png' : 'assets/logomarca.png';
+  if (!heroLogo.getAttribute('src')?.endsWith(target)) {
+    heroLogo.src = target;
+  }
+};
+
+window.addEventListener('tdl:theme-changed', (e) => {
+  if (e.detail?.theme) syncHeroLogo(e.detail.theme);
+});
+syncHeroLogo(document.documentElement.getAttribute('data-theme') || 'dark');
+

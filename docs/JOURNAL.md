@@ -1,5 +1,15 @@
 # Diário de Bordo — Flowrish
 
+## 13 de Novembro de 2026 — Correção da Flor Hero: Miolo Escuro e Eliminação de Duplicação
+
+- **Contexto**: Relato do operador indicando duplicação da flor na tela inicial (duas flores lado a lado no Hero) e ausência de alteração na cor do miolo central da flor no modo claro, em dissonância com o comportamento do logo da navbar onde tanto a tipografia quanto o miolo da flor alternam entre creme e verde oliva escuro (`#2D2E1B`).
+- **Ações Realizadas**:
+  1. `assets/logomarca-dark-olive.png`: Regeneração de alta fidelidade remapeando com antialiasing suave tanto as letras de "Flowrish" ($Y \ge 265$) quanto o miolo central da flor 3D ($X \in [187, 216], Y \in [122, 150]$) para Verde Oliva escuro (`#2D2E1B` / `rgb(48, 49, 29)`), preservando 100% dos pixels das pétalas 3D Soft Clay e suas sombras originais.
+  2. `index.html`: Substituição dos dois elementos `<img>` no Hero por uma única tag canônica `<img id="heroLogomarca">` com script em linha de sincronização inicial imediata, tornando a duplicação fisicamente impossível sob qualquer estado de cache do navegador. Inserção de query string de cache-busting (`?v=1.3.3`) em todos os links CSS.
+  3. `js/home.js`: Registro de listener para o evento `tdl:theme-changed` com troca dinâmica do `src` da logomarca entre clara e escura sincronizada em tempo real com o botão da navbar.
+  4. `css/components.css`: Limpeza das regras legadas de display de `.hero-logo-*`.
+- **Validação**: 11/11 testes unitários aprovados no Vitest (`npm test`). Servidor local mantido ativo na porta 8080 e DOM verificado via curl.
+
 ## 13 de Novembro de 2026 — Alternância de Cor do Texto Flowrish no Hero
 
 - **Contexto**: Relato do operador com captura de tela demonstrando que, no modo claro, o texto "Flowrish" sob a grande flor 3D do Hero permanecia em cor creme clara (`#F6EED9`), perdendo o contraste com o fundo marfim, enquanto na navbar o texto já alternava corretamente para verde oliva escuro.

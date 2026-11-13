@@ -7,6 +7,11 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 ### Corrigido
+- **Eliminação de Duplicação da Flor e Miolo Escuro no Hero (Modo Claro)**:
+  - `assets/logomarca-dark-olive.png`: Regeneração da imagem da logomarca adaptada ao modo claro remapeando o miolo central da flor 3D (`#2D2E1B` / `rgb(48, 49, 29)`) além do texto "Flowrish", combinando perfeitamente com a flor do logotipo da navbar superior.
+  - `index.html`: Migração para elemento único canônico `<img id="heroLogomarca">` com sincronização inicial imediata e adição de cache-busting (`?v=1.3.3`) aos estilos, erradicando qualquer possibilidade de renderização de flores duplicadas lado a lado.
+  - `js/home.js`: Integração com evento `tdl:theme-changed` para alternância suave do `src` em tempo real ao clicar no botão de tema.
+  - `css/components.css`: Remoção das regras obsoletas de display de imagens múltiplas no Hero.
 - **Alternância Automática da Cor do Texto "Flowrish" no Hero (Modo Claro/Escuro)**:
   - `assets/logomarca-dark-olive.png`: Geração do asset do Hero em alta definição preservando 100% da flor 3D suave original e mapeando o texto "Flowrish" para Verde Oliva escuro (`#2D2E1B` / `#30311D`), idêntico à tipografia do logo da navbar.
   - `index.html` & `css/components.css`: Suporte a alternância automática entre `.hero-logo-dark` (texto claro) no modo escuro e `.hero-logo-light` (texto escuro) no modo claro, resolvendo o texto que ficava em creme desbotado sobre o fundo marfim.
