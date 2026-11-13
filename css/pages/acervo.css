@@ -1,22 +1,8 @@
 /* ============================================
-   Meu acervo — layout da Biblioteca (biblioteca.css) em tons de rosa,
-   com os botões de editar (lápis) e excluir (lixeira) nos cards.
+   Meu acervo — layout da Biblioteca em Claymorphism Soft 3D,
+   com os botões táteis de editar (lápis) e excluir (lixeira) nos cards.
    ============================================ */
-.acervo-page {
-  --lib-sand: #E8C2C4;
-  --lib-sand-text: #9A7C7F;
-  --lib-panel: #E6C3C4;
-  --lib-chip: #E3A2B8;
-}
-/* Botão de filtros rosa também com o painel aberto (na Biblioteca ele fica oliva) */
-.acervo-page .lib-filter-btn,
-.acervo-page .lib-filter-btn[aria-expanded="true"] { background: var(--lib-sand); color: var(--lib-ink); }
-.acervo-page .lib-filter-btn:hover { background: #DEB1B4; }
-.acervo-page .lib-filters .filter-chip { border-color: transparent; }
-.acervo-page .lib-filters .filter-chip:hover { background: #EBB6C7; }
-.acervo-page .lib-filters .filter-chip.active { background: var(--hv-olive); color: var(--hv-cream); }
-.acervo-page .lib-filters-top .lib-filter-group + .lib-filter-group { flex: 0 0 auto; }
-.acervo-page .lib-filter-group h2 { text-align: center; }
+.acervo-page .lib-filter-group h2 { text-align: left; }
 
 /* Card: ações no canto inferior direito */
 .acervo-card .book-info { position: relative; padding-bottom: 64px; }

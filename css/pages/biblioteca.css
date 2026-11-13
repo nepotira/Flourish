@@ -1,13 +1,28 @@
 /* ============================================
-   Biblioteca — mesmo visual "flor" da home (oliva, creme e rosa)
-   Reaproveita de home.css: variáveis --hv-*, navbar--home, fundo e cards (.hv-cards).
+   Biblioteca & Acervo — Claymorphism Soft 3D Design System
+   Harmonizado com a paleta Verde Oliva, Rosa Antigo e Creme
    ============================================ */
 .library-page {
-  --lib-sand: #D3CBA8;
-  --lib-sand-text: #8C8463;
-  --lib-panel: #9C9B6B;
-  --lib-chip: #DDD6B8;
-  --lib-ink: #3A3B27;
+  --lib-search-bg: #353620;
+  --lib-search-border: var(--border);
+  --lib-search-text: var(--creme);
+  --lib-search-placeholder: var(--text-muted);
+  --lib-panel-bg: var(--surface-card);
+  --lib-chip-bg: linear-gradient(180deg, rgba(100, 102, 66, 0.95) 0%, rgba(78, 79, 49, 0.98) 100%);
+  --lib-chip-border: var(--border);
+  --lib-chip-text: var(--creme);
+}
+
+[data-theme="light"] .library-page,
+html[data-theme="light"] .library-page {
+  --lib-search-bg: #EAE3CE;
+  --lib-search-border: rgba(67, 68, 42, 0.25);
+  --lib-search-text: #353620;
+  --lib-search-placeholder: #7B795A;
+  --lib-panel-bg: #E3DCB8;
+  --lib-chip-bg: #D8D0AC;
+  --lib-chip-border: rgba(67, 68, 42, 0.25);
+  --lib-chip-text: #353620;
 }
 
 .lib-main {
@@ -16,135 +31,191 @@
 }
 .lib-inner { max-width: 1020px; }
 
-/* ---------- Busca + botão de filtros ---------- */
+/* ---------- Busca + botão de filtros Claymorphism ---------- */
 .lib-search-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   max-width: 940px;
-  margin: 0 auto 26px;
+  margin: 0 auto 30px;
 }
 .lib-search {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 18px;
+  gap: 14px;
+  padding: 0 22px;
+  height: 54px;
   border-radius: var(--radius-pill);
-  background: var(--lib-sand);
-  color: var(--lib-ink);
+  background: var(--lib-search-bg);
+  border: 1.5px solid var(--lib-search-border);
+  box-shadow: var(--shadow-clay-input);
+  color: var(--lib-search-text);
+  transition: all 0.22s ease;
 }
-.lib-search svg { flex-shrink: 0; }
+.lib-search svg {
+  flex-shrink: 0;
+  color: var(--lib-search-placeholder);
+  transition: color 0.22s ease;
+}
 .lib-search input {
   flex: 1;
   min-width: 0;
-  padding: 11px 0;
+  padding: 12px 0;
   border: none;
   background: transparent;
-  font-family: var(--hv-font-body);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--lib-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--lib-search-text);
   outline: none;
 }
-.lib-search input::placeholder { color: var(--lib-sand-text); opacity: 1; }
+.lib-search input::placeholder {
+  color: var(--lib-search-placeholder);
+  opacity: 0.9;
+  font-weight: 500;
+}
 .lib-search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
-.lib-search:focus-within { box-shadow: 0 0 0 3px rgba(75, 76, 51, 0.25); }
+.lib-search:focus-within {
+  border-color: var(--primary);
+  background: #3B3C23;
+  box-shadow: 0 0 0 4px rgba(223, 148, 157, 0.35), inset 0 2.5px 5px rgba(0, 0, 0, 0.35);
+}
+.lib-search:focus-within svg {
+  color: var(--primary);
+}
 
 .lib-filter-btn {
   flex-shrink: 0;
-  width: 44px; height: 44px;
-  border: none;
+  width: 54px; height: 54px;
+  border: 1.5px solid var(--border);
   border-radius: 50%;
-  background: var(--lib-sand);
-  color: var(--lib-ink);
+  background: linear-gradient(180deg, rgba(100, 102, 66, 0.95) 0%, rgba(78, 79, 49, 0.98) 100%);
+  color: var(--creme);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  box-shadow: 0 8px 20px -4px rgba(0,0,0,0.35), inset 0 1.5px 2px rgba(255, 255, 255, 0.25);
+  transition: all 0.22s ease;
 }
-.lib-filter-btn:hover { background: #C7BF99; }
-.lib-filter-btn[aria-expanded="true"] { background: var(--hv-olive); color: var(--hv-cream); }
+.lib-filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 12px 24px -4px rgba(223, 148, 157, 0.45), inset 0 1.5px 2px rgba(255, 255, 255, 0.4);
+}
+.lib-filter-btn[aria-expanded="true"] {
+  background: linear-gradient(145deg, #EAA6B0 0%, #DF949D 100%);
+  border-color: #DF949D;
+  color: #FFFFFF;
+  box-shadow: 0 10px 22px -4px rgba(223, 148, 157, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.6);
+}
 
-/* ---------- Painel de filtros ---------- */
+/* ---------- Painel de filtros Claymorphism ---------- */
 .lib-filters {
   max-width: 940px;
   margin: 0 auto 40px;
-  padding: 18px 26px 22px;
-  border-radius: 34px;
-  background: var(--lib-panel);
-  color: var(--lib-ink);
-  font-family: var(--hv-font-body);
-  box-shadow: 0 10px 30px rgba(75, 76, 51, 0.15);
+  padding: 24px 30px 26px;
+  border-radius: 28px;
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  color: var(--creme);
+  font-family: var(--font-body);
+  box-shadow: var(--shadow-clay-card);
 }
 .lib-filters[hidden] { display: none; }
 .lib-filters-top,
 .lib-filters-bottom { display: flex; }
-.lib-filters-top { margin-bottom: 18px; }
-.lib-filters-bottom { align-items: flex-end; flex-wrap: wrap; row-gap: 14px; }
+.lib-filters-top { margin-bottom: 20px; }
+.lib-filters-bottom { align-items: flex-end; flex-wrap: wrap; row-gap: 16px; }
 
-.lib-filter-group { padding: 0 16px; }
+.lib-filter-group { padding: 0 18px; }
 .lib-filter-group:first-child { padding-left: 0; }
-.lib-filter-group + .lib-filter-group { border-left: 2px solid rgba(58, 59, 39, 0.35); }
+.lib-filter-group + .lib-filter-group { border-left: 2px solid var(--border); }
 .lib-filter-genero { flex: 1; padding-right: 0; text-align: left; }
 .lib-filter-genero .filter-chip-list { justify-content: flex-start; }
 
 .lib-filter-group h2 {
-  margin: 0 0 10px;
-  font-family: var(--hv-font-display);
-  font-weight: 600;
-  font-size: 1.3rem;
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
   line-height: 1.2;
-  color: var(--lib-ink);
+  color: var(--creme);
 }
 .lib-filter-group h2 label { font: inherit; color: inherit; }
 
-.lib-filters .filter-chip-list { gap: 8px 10px; }
+.lib-filters .filter-chip-list { gap: 10px 12px; }
 .lib-filters .filter-chip {
-  padding: 3px 12px;
-  border: 1px solid rgba(58, 59, 39, 0.25);
-  background: var(--lib-chip);
-  color: var(--lib-ink);
-  font-family: var(--hv-font-body);
-  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  background: linear-gradient(180deg, rgba(100, 102, 66, 0.95) 0%, rgba(78, 79, 49, 0.98) 100%);
+  color: var(--creme);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
-.lib-filters .filter-chip:hover { background: #E9E3C8; }
-.lib-filters .filter-chip.active { background: var(--hv-olive); border-color: var(--hv-olive); color: var(--hv-cream); }
+.lib-filters .filter-chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+.lib-filters .filter-chip.active {
+  background: linear-gradient(145deg, #EAA6B0 0%, #DF949D 100%);
+  border-color: #DF949D;
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(223, 148, 157, 0.5), inset 0 1.5px 2px rgba(255, 255, 255, 0.6);
+}
 
 .lib-select {
-  width: 160px;
-  padding: 4px 32px 4px 12px;
-  border: 1px solid rgba(58, 59, 39, 0.25);
+  width: 170px;
+  height: 38px;
+  padding: 0 32px 0 14px;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-pill);
-  background: var(--lib-chip) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M0 0h12L6 8z' fill='%233A3B27'/%3E%3C/svg%3E") no-repeat right 12px center;
-  font-family: var(--hv-font-body);
-  font-size: 0.85rem;
-  color: var(--lib-ink);
+  background: #353620 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M0 0h12L6 8z' fill='%23F7EFDA'/%3E%3C/svg%3E") no-repeat right 14px center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--creme);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
 }
-.lib-select:focus, .lib-select:focus-visible { outline: none; }
+.lib-select:focus, .lib-select:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+}
 .lib-clear {
   margin-left: auto;
-  padding: 4px;
+  padding: 6px 14px;
   border: none;
-  background: none;
-  font-family: var(--hv-font-body);
+  background: transparent;
+  color: var(--rosa-pastel);
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--lib-ink);
-  text-decoration: underline;
+  font-size: 0.92rem;
   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.lib-clear:hover {
+  color: #FFFFFF;
 }
 
 /* ---------- Grade de cards ---------- */
 .lib-count {
   max-width: 940px;
-  margin: 0 auto 14px;
-  font-family: var(--hv-font-body);
-  font-size: 0.9rem;
-  color: var(--hv-olive-soft);
+  margin: 0 auto 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 .lib-grid {
   display: grid;

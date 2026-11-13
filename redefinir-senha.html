@@ -23,14 +23,24 @@
 <body>
 <div class="auth-wrap">
   <div class="auth-visual">
-    <h2>Quase lá!</h2>
-    <p>Escolha uma nova senha forte para continuar cuidando da sua estante de trocas.</p>
+    <div class="auth-deco" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="auth-brand-content">
+      <a href="index.html" class="auth-logo" aria-label="Flowrish — início">
+        Fl<img src="assets/flor-logo.svg" alt="">wrish
+      </a>
+      <p class="auth-visual-tagline">Recupere o acesso à sua conta e continue suas trocas na comunidade.</p>
+    </div>
   </div>
   <div class="auth-form-side">
     <div class="auth-box">
-      <a href="login.html" class="back-home">← Voltar para o login</a>
-      <h1 style="font-size:1.8rem;">Redefinir senha</h1>
-      <p class="text-muted" id="redefinirSubtitle">Verificando o link...</p>
+      <a href="login.html" class="auth-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar para o login
+      </a>
+      <h1 class="auth-title">Redefinir senha</h1>
+      <p class="auth-subtitle" id="redefinirSubtitle">Verificando o link recebido...</p>
 
       <form id="redefinirForm" novalidate style="display:none;">
         <div class="field">
@@ -41,12 +51,12 @@
         <div class="field">
           <label for="confirmarNovaSenha">Confirmar nova senha</label>
           <input class="input" type="password" id="confirmarNovaSenha" required minlength="6" placeholder="Repita a senha">
-          <p class="hint" id="confirmarNovaSenhaHint" style="display:none;color:var(--danger);">As senhas não coincidem.</p>
+          <p class="hint" id="confirmarNovaSenhaHint" style="display:none;color:var(--danger);font-size:0.85rem;margin-top:4px;">As senhas não coincidem.</p>
         </div>
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Redefinir senha</button>
+        <button type="submit" class="auth-submit">Atualizar senha</button>
       </form>
 
-      <div id="redefinirInvalido" style="display:none;">
+      <div id="redefinirInvalido" style="display:none;margin-top:20px;">
         <a href="login.html" class="btn btn-secondary btn-block">Voltar para o login</a>
       </div>
     </div>
