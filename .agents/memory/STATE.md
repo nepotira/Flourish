@@ -1,7 +1,8 @@
 # Estado do Projeto — Flowrish
 
-> **Última atualização:** 03/11/2026  
+> **Última atualização:** 12/11/2026  
 > **Versão:** 1.2.0 (Claymorphism Soft 3D)  
+> **Repositório Primário:** `nepotira/Flowrish` (independente, não-fork)  
 > **Testes Unitários:** 9/9 Aprovados (Vitest)  
 > **Ambiente Operacional:** Linux Ubuntu 24.04 & Windows 11  
 > **Persistência:** Firebase Auth + Cloud Firestore (`biblioteca-76f0c`)  

@@ -1,9 +1,10 @@
 # Estado do Projeto — Flowrish
 
-> **Data de Atualização:** 03 de Novembro de 2026  
+> **Data de Atualização:** 12 de Novembro de 2026  
 > **Versão:** 1.2.0 (Claymorphism Soft 3D Release)  
 > **Status:** Conforme & Estável  
-> **Branch Ativa:** `integrate-whatsapp-claymorphism` (a ser integrada à `main`, `MVP` e `Claymorphism`)  
+> **Repositório Primário:** `nepotira/Flowrish` (independente, não-fork)  
+> **Branch Ativa:** `main` (sincronizada com `origin/main`)  
 
 ---
 
