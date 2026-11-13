@@ -228,7 +228,10 @@
   .auth-submit { margin-top: 40px; }
 }
 @media (max-width: 560px) {
-  .auth-logo { font-size: 3rem; }
-  .auth-flor .field label { font-size: 1.35rem; }
-  .auth-terms { margin-left: 8px; gap: 14px; }
+  .auth-logo { font-size: 2.6rem; }
+  .auth-flor .auth-visual { min-height: 140px; padding: 18px; }
+  .auth-flor .auth-form-side { padding: 24px 16px 40px; }
+  .auth-flor .field label { font-size: 1.15rem; }
+  .auth-terms { margin-left: 4px; gap: 10px; font-size: 0.95rem; }
+  .auth-submit { margin-top: 24px; height: 50px; font-size: 1.15rem; width: 100%; }
 }

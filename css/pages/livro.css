@@ -238,9 +238,31 @@
   text-align: center; font-size: 1.1rem; font-weight: 700; text-decoration: none;
 }
 .proposta-anunciar:hover { background: #B96A86; color: #F5EEDA; }
-@media (max-width: 560px) {
-  .modal.proposta-modal { padding: 26px 20px 22px; border-radius: 24px; }
+@media (max-width: 600px) {
+  .modal-backdrop:has(.proposta-modal) {
+    align-items: flex-end !important;
+    padding: 0 !important;
+  }
+  .modal.proposta-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 28px 28px 0 0 !important;
+    padding: 16px 20px calc(24px + var(--sab, 0px)) !important;
+    max-height: 82vh !important;
+    box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.6) !important;
+  }
+  .modal.proposta-modal::before {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(245, 238, 218, 0.45);
+    margin: 0 auto 16px;
+  }
   .proposta-titulo { font-size: 1.25rem; }
+  .proposta-lista { max-height: 55vh; }
 }
 
 /* Modal de avaliação do perfil: estrelas e comentário (reviews.js) */

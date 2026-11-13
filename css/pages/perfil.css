@@ -103,8 +103,22 @@
   .perfil-bio { margin-left: auto; margin-right: auto; }
   .perfil-numeros { justify-content: center; padding-left: 0; font-size: 0.95rem; gap: 8px 20px; }
   .perfil-onda { height: 140px; }
-  .perfil-abas { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .perfil-abas button { font-size: 0.95rem; padding: 5px 10px; }
+  .perfil-abas {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    padding-bottom: 6px;
+    justify-content: flex-start;
+  }
+  .perfil-abas::-webkit-scrollbar { display: none; }
+  .perfil-abas button {
+    flex: 0 0 auto;
+    font-size: 0.95rem;
+    padding: 6px 16px;
+    white-space: nowrap;
+  }
   .perfil-config { grid-template-columns: 1fr; margin-top: 0; }
   .perfil-config-menu { flex-direction: row; flex-wrap: wrap; gap: 6px; padding: 0 0 14px; border-right: none; border-bottom: 3px solid var(--pf-olive); }
   .perfil-config-menu button { font-size: 0.95rem; }

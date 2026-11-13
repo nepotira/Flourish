@@ -6,6 +6,16 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+### Adicionado
+- **Adaptação 100% Funcional para Celulares (Mobile First)**:
+  - Barra de navegação inferior flutuante (*Bottom Navigation Bar*) Claymorphism para navegação rápida com o polegar (Início, Biblioteca, Anunciar, Acervo, Perfil).
+  - Suporte a Progressive Web App (PWA) via `manifest.json` e meta tags para instalação na tela de início de smartphones Android e iOS.
+  - Bloqueio inteligente de rolagem do fundo (`body-scroll-lock`) ao abrir a gaveta móvel (*drawer*).
+  - Prevenção de auto-zoom indesejado no iOS Safari com padronização de fontes de input para 16px mínimo.
+  - Carrossel horizontal deslizável com o dedo para chips de gêneros literários na Biblioteca e no Acervo.
+  - Bottom Sheet nativo deslizante de baixo para cima para o modal de propostas de troca pelo WhatsApp em `livro.html`.
+  - Grade responsiva otimizada de 2 colunas para exibição fluida de livros em celulares de 360px a 480px.
+  - Otimização de botões táteis no Acervo (44x44px), abas em segmented control no Perfil e eliminação de margens excessivas no Anunciante.
 
 ## [1.2.0] - 2026-11-03
 ### Adicionado

@@ -57,6 +57,17 @@
 
 .acervo-page .lib-empty[hidden] { display: none; }
 
+@media (max-width: 560px) {
+  .acervo-card .book-info { padding-bottom: 56px; }
+  .acervo-actions {
+    right: 8px; bottom: 8px;
+    gap: 6px;
+  }
+  .acervo-btn {
+    width: 38px; height: 38px;
+  }
+}
+
 /* Acervo sem nenhum livro */
 .acervo-vazio {
   margin: 60px auto;

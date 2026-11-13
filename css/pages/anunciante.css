@@ -85,8 +85,9 @@
   .sl-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
 }
 @media (max-width: 560px) {
-  .sl-header { flex-direction: column; text-align: center; gap: 16px; }
+  .sl-header { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; border-radius: 22px; }
   .sl-stats { justify-content: center; }
-  .sl-books { margin-top: 110px; }
-  .sl-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+  .sl-books { margin-top: 36px; }
+  .sl-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 100%; margin: 0; }
+  .sl-reviews { margin-top: 36px; padding: 20px 18px 24px; border-radius: 22px; }
 }

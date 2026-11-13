@@ -14,6 +14,14 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+body.body-scroll-lock {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 img { max-width: 100%; display: block; }
@@ -396,3 +404,16 @@ input[type="checkbox"]:checked::after {
 .text-muted { color: var(--text-muted); }
 .mt-0 { margin-top: 0; } .mb-0 { margin-bottom: 0; }
 .w-full { width: 100%; }
+
+/* Mobile Ergonômico & Prevenção de Auto-zoom no iOS */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  body {
+    padding-bottom: calc(var(--bottom-nav-h, 68px) + var(--sab, 0px) + 12px);
+  }
+  .site-footer {
+    padding-bottom: calc(var(--bottom-nav-h, 68px) + var(--sab, 0px) + 24px) !important;
+  }
+}

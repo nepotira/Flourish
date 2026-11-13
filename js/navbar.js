@@ -101,6 +101,30 @@ export function renderNavbar(activePage = '') {
         ${session ? `<a href="perfil.html">Meu Perfil</a><button id="mobileLogout">Sair</button>` : `<a href="login.html">Entrar</a><a href="cadastro.html">Cadastrar</a>`}
       </div>
     </div>
+    <nav class="bottom-nav" aria-label="Navegação rápida móvel">
+      <a href="index.html" class="bottom-nav-item ${activePage === 'index.html' ? 'active' : ''}" aria-label="Início">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Início</span>
+      </a>
+      <a href="biblioteca.html" class="bottom-nav-item ${activePage === 'biblioteca.html' ? 'active' : ''}" aria-label="Biblioteca">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Biblioteca</span>
+      </a>
+      <a href="cadastrar-livro.html" class="bottom-nav-item bottom-nav-action ${activePage === 'cadastrar-livro.html' ? 'active' : ''}"${lockAttrs({ requiresLogin: true })} aria-label="Anunciar livro">
+        <div class="bottom-nav-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <span>Anunciar</span>
+      </a>
+      <a href="acervo.html" class="bottom-nav-item ${activePage === 'acervo.html' ? 'active' : ''}"${lockAttrs({ requiresLogin: true })} aria-label="Meu acervo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Acervo</span>
+      </a>
+      <a href="${session ? 'perfil.html' : 'login.html'}" class="bottom-nav-item ${activePage === 'perfil.html' || activePage === 'login.html' ? 'active' : ''}" aria-label="${session ? 'Meu perfil' : 'Entrar'}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>${session ? 'Perfil' : 'Entrar'}</span>
+      </a>
+    </nav>
   `;
 
   const handleThemeToggle = () => {
@@ -128,13 +152,22 @@ export function renderNavbar(activePage = '') {
 
   const navToggle = document.getElementById('navToggle');
   const drawer = document.getElementById('mobileDrawer');
-  navToggle?.addEventListener('click', () => drawer.classList.add('open'));
-  document.getElementById('closeDrawer')?.addEventListener('click', () => drawer.classList.remove('open'));
-  drawer?.addEventListener('click', (e) => { if (e.target === drawer) drawer.classList.remove('open'); });
+  const openDrawer = () => {
+    drawer?.classList.add('open');
+    document.body.classList.add('body-scroll-lock');
+  };
+  const closeDrawer = () => {
+    drawer?.classList.remove('open');
+    document.body.classList.remove('body-scroll-lock');
+  };
+
+  navToggle?.addEventListener('click', openDrawer);
+  document.getElementById('closeDrawer')?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
 
   root.querySelectorAll('[data-requires-login]').forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
-    drawer?.classList.remove('open');
+    closeDrawer();
     requireLoginModal();
   }));
 
