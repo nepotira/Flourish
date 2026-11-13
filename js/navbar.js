@@ -1,6 +1,6 @@
 import { getSession, logout } from './storage.js';
 import { openModal } from './modal.js';
-import { getTheme, toggleTheme } from './theme.js';
+import { getTheme, toggleTheme, initTheme } from './theme.js';
 
 const NAV_LINKS = [
   { href: 'index.html', label: 'Início' },
@@ -64,7 +64,7 @@ export function renderNavbar(activePage = '') {
     <header class="navbar navbar--home">
       <div class="navbar-inner">
         <a href="index.html" class="logo" aria-label="Flowrish — início">
-          <span class="logo-text">${FLOWER_LOGO}</span>
+          <img src="assets/logo-horizontal.png" alt="Flowrish" class="logo-horizontal-img">
         </a>
         <nav class="nav-links" aria-label="Navegação principal">${linksHTML}</nav>
         <form class="nav-search" role="search" id="navSearchForm">
@@ -85,7 +85,7 @@ export function renderNavbar(activePage = '') {
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-panel">
         <div class="flex justify-between items-center" style="margin-bottom:12px;">
-          <strong>Menu</strong>
+          <img src="assets/logo-horizontal-marrom.png" alt="Flowrish" style="height:32px;">
           <button class="btn-icon" id="closeDrawer" aria-label="Fechar menu">✕</button>
         </div>
         <form class="nav-search mobile-search" id="mobileSearchForm">
@@ -216,15 +216,31 @@ export function renderFooter() {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-col">
-            <div class="footer-logo"><span aria-hidden="true">${FLOWER_LOGO}</span><span class="visually-hidden">Flowrish</span></div>
+            <div class="footer-logo">
+              <span class="logo-mark" aria-hidden="true" style="background:rgba(255,255,255,0.15);">
+                <img src="assets/logo.png" width="20" height="20" alt="">
+              </span>
+              Flowrish
+            </div>
+            <p>Uma comunidade de leitores que acredita que todo livro merece ser lido mais de uma vez, por mais de uma pessoa.</p>
           </div>
-          <div class="footer-col footer-links-inline">
+          <div class="footer-col">
+            <h4>Plataforma</h4>
+            <a href="biblioteca.html">Biblioteca</a>
+            <a href="cadastrar-livro.html">Anunciar livro</a>
+            <a href="acervo.html">Meu acervo</a>
+            <a href="index.html#como-funciona">Como funciona</a>
+            <a href="index.html#beneficios">Benefícios</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
             <a href="ajuda.html">Central de ajuda</a>
-            <a href="assets/termos.pdf" target="_blank" rel="noopener">Termos de uso e política de privacidade</a>
+            <a href="assets/termos.pdf" target="_blank" rel="noopener">Termos de uso e privacidade (PDF)</a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© ${new Date().getFullYear()} Flowrish</span>
+          <span>© ${new Date().getFullYear()} Flowrish. Todos os direitos reservados.</span>
+          <span>Feito com 💚 para leitores.</span>
         </div>
       </div>
     </footer>

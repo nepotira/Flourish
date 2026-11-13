@@ -6,6 +6,14 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+### Corrigido
+- **Restauração e Harmonização do Claymorphism Soft 3D**:
+  - Restauração integral da página inicial autêntica com o Hero 3D, selo tátil em relevo, logomarca tridimensional iluminada (`assets/logomarca.png`), grade de 4 passos, carrossel de livros e banner CTA.
+  - Recuperação dos 6 GIFs animados táteis da seção de benefícios (`sustentavel2.gif`, `favorito2.gif`, `aperto-de-mao2.gif`, `caixa-de-entrega2.gif`, `missao2.gif`, `bater2papo.gif`) e do guia formal `DESIGN.md`.
+  - Correção do erro fatal de JavaScript (`ReferenceError: initTheme is not defined`) em `js/navbar.js`, importando `initTheme` de `./theme.js`.
+  - Padronização de tipografia (`Fredoka` & `Nunito`), prevenção de flash do modo escuro e ícones de aba em todas as 11 páginas da aplicação.
+  - Harmonização completa e sem conflitos com as novas funções de troca direta por WhatsApp, gestão do Acervo (`acervo.html`) e perfil do Anunciante (`anunciante.html`).
+
 ### Adicionado
 - **Adaptação 100% Funcional para Celulares (Mobile First)**:
   - Barra de navegação inferior flutuante (*Bottom Navigation Bar*) Claymorphism para navegação rápida com o polegar (Início, Biblioteca, Anunciar, Acervo, Perfil).
