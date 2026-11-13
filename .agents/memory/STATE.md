@@ -1,7 +1,7 @@
 # Estado do Projeto — Flowrish
 
 > **Última atualização:** 13/11/2026  
-> **Versão:** 1.2.0 (Claymorphism Soft 3D Harmonizado com WhatsApp)  
+> **Versão:** 1.3.0 (Claymorphism Soft 3D Integral & Adaptação Mobile)  
 > **Repositório Primário:** `nepotira/Flowrish` (independente, não-fork)  
 > **Testes Unitários:** 10/10 Aprovados (Vitest)  
 > **Ambiente Operacional:** Linux Ubuntu 24.04 & Windows 11  

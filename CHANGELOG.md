@@ -6,6 +6,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+
+## [1.3.0] - 2026-11-13
 ### Alterado
 - **Harmonização Integral de Telas e Subpáginas com Claymorphism Soft 3D**:
   - `perfil.html` / `css/pages/perfil.css`: Eliminação do fundo bege plano residual (`--pf-cream`) e tipografia legada (`Oswald`, `Open Sans`, `DM Sans`); reconstrução com cabeçalho em cartão Claymorphic elevado, badge de localização escavado em relevo interno (`#353620`), abas estilo pill tátil com gradiente rosa ativo (`#EAA6B0` -> `#DF949D`) e formulário de configurações com inputs 3D e botão primário tátil.

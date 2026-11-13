@@ -1,10 +1,10 @@
 # Estado do Projeto — Flowrish
 
 > **Data de Atualização:** 13 de Novembro de 2026  
-> **Versão:** 1.2.0 (Claymorphism Soft 3D Integral em 100% das Telas)  
+> **Versão:** 1.3.0 (Claymorphism Soft 3D Integral & Adaptação Mobile)  
 > **Status:** Conforme & Estável  
 > **Repositório Primário:** `nepotira/Flowrish` (independente, não-fork)  
-> **Branch Ativa:** `feat/harmonize-all-remaining-screens` (pronta para PR e merge na `main`)  
+> **Branch Ativa:** `main` (sincronizada com `origin/main` e `fork-flourish/main`)  
 
 ---
 
