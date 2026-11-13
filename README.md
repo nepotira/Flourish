@@ -1,100 +1,104 @@
+[English](README.md) | [Português do Brasil](README.pt-BR.md)
+
+---
+
 # 🌸 Flowrish
 
-> **Plataforma comunitária e colaborativa para troca de livros físicos entre leitores, com combinação direta pelo WhatsApp e interface Claymorphism Soft 3D.**
+> **Community and collaborative platform for physical book swapping among readers, featuring direct WhatsApp coordination and a Claymorphism Soft 3D interface.**
 
 [![Release SemVer](https://img.shields.io/badge/release-v1.2.0-DF949D.svg?style=flat-square)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-43442A.svg?style=flat-square)](LICENSE)
 [![Tests: Vitest](https://img.shields.io/badge/tests-9%20passed-6FA779.svg?style=flat-square)](tests/unit/)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-F7EFDA.svg?style=flat-square&logoColor=353620)](#instalação-e-execução)
-[![Design: Claymorphism](https://img.shields.io/badge/design-Claymorphism%20Soft%203D-DF949D.svg?style=flat-square)](#design-system-claymorphism-soft-3d)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-F7EFDA.svg?style=flat-square&logoColor=353620)](#-installation-and-execution)
+[![Design: Claymorphism](https://img.shields.io/badge/design-Claymorphism%20Soft%203D-DF949D.svg?style=flat-square)](#-design-system-claymorphism-soft-3d)
 
 ---
 
-## 📖 Sobre o Projeto
+## 📖 About the Project
 
-O **Flowrish** nasceu para dar nova vida a livros físicos parados na estante. Através de um catálogo interativo, leitores podem anunciar suas obras, descobrir novos títulos e propor trocas livro por livro diretamente pelo WhatsApp, promovendo a sustentabilidade, a economia circular e o acesso democrático à leitura.
+**Flowrish** was created to bring idle bookshelf volumes back to life. Through an interactive catalog, readers can list their books, discover new titles, and propose one-for-one exchanges directly via WhatsApp, fostering sustainability, circular economy, and democratic access to reading.
 
-O projeto foi construído sem frameworks pesados de frontend (Vanilla ES Modules puro), garantindo performance extrema, carregamento instantâneo e total portabilidade multiplataforma.
+The project is built without heavy frontend frameworks (pure Vanilla ES Modules), delivering fast performance, instant loading, and seamless cross-platform portability.
 
 ---
 
-## ✨ Principais Funcionalidades
+## ✨ Key Features
 
-- **Biblioteca Interativa**: Catálogo completo com busca em tempo real por título/autor e filtros combinados por gênero literário, conservação e origem.
-- **Troca Descomplicada pelo WhatsApp**:
-  - Modal inteligente na página do livro onde o interessado seleciona qual livro do seu próprio acervo deseja oferecer em troca.
-  - Geração automática de link do WhatsApp com mensagem de respeito padronizada e recomendação do método seguro **Clique e Retire** dos Correios.
-- **Meu Acervo**: Painel exclusivo para o leitor gerenciar suas obras anunciadas, editar dados ou remover anúncios após a troca.
-- **Perfil do Anunciante & Avaliações Reais**:
-  - Página pública do leitor exibindo sua bio, localização e acervo disponível.
-  - Sistema de reputação autêntico (sem notas fictícias): avaliações de 1 a 5 estrelas entre leitores com espaço para réplica do anunciante.
-- **Design System Claymorphism Soft 3D**:
-  - Estética visual orgânica com sombras suaves `inset` e `drop-shadow` em dupla camada, bordas arredondadas e cliques táteis.
-  - Alternância instantânea entre **Modo Claro** e **Modo Escuro** com persistência em `localStorage`.
+- **Interactive Library**: Full catalog with real-time title/author search and combined filtering by genre, condition, and origin.
+- **Seamless Swapping via WhatsApp**:
+  - Contextual modal on the book details page allowing readers to choose which book from their own collection they wish to offer in exchange.
+  - Automatic generation of formatted WhatsApp links with respectful opening messages and secure postal pickup recommendations (Correios Clique e Retire).
+- **My Collection**: Exclusive reader dashboard to manage listed titles, edit book details, or mark items as swapped.
+- **Advertiser Profile & Genuine Reviews**:
+  - Public reader profile showcasing bio, location, and listed collection.
+  - Authentic reputation system (no simulated ratings): 1-to-5 star reviews between verified users with response capabilities.
+- **Claymorphism Soft 3D Design System**:
+  - Organic aesthetic featuring layered inset highlights and soft drop shadows, rounded pill shapes, and tactile button feedback.
+  - Instant theme toggle between **Dark Mode** and **Light Mode** with `localStorage` persistence and cross-tab synchronization.
 - **Zero Mocks**:
-  - Todo o sistema opera com dados autênticos do Firebase Firestore (`biblioteca-76f0c`) e metadados oficiais via Google Books API.
-  - Fallback local de capas em SVG nativo ([`assets/sem-capa.svg`](assets/sem-capa.svg)), dispensando serviços externos instáveis.
+  - 100% powered by authentic Firebase Firestore data (`biblioteca-76f0c`) and official metadata via Google Books API.
+  - Native local vector cover fallback ([`assets/sem-capa.svg`](assets/sem-capa.svg)), eliminating brittle external image placeholders.
 
 ---
 
 ## 🎨 Design System: Claymorphism Soft 3D
 
-O Flowrish adota uma identidade visual autoral baseada no conceito **Soft 3D / Claymorphism**:
+Flowrish embraces an original visual design language grounded in **Soft 3D / Claymorphism**:
 
-| Elemento | Especificação / Token | Efeito Visual |
+| Element | Token / Specification | Visual Impression |
 |---|---|---|
-| **Verde Oliva** | `#43442A` / `#353620` | Conforto visual e base acolhedora |
-| **Rosa Antigo** | `#DF949D` / `#C97E87` | Botões táteis com relevo e micro-interações |
-| **Creme Suave** | `#F7EFDA` / `#FBF6EB` | Tipografia calorosa e superfícies táteis |
-| **Sombras Clay** | Inset highlights + drop shadows | Sensação física de toque e profundidade |
+| **Olive Dark** | `#43442A` / `#353620` | Grounded, cozy, and natural reading base |
+| **Antique Rose** | `#DF949D` / `#C97E87` | Tactile raised buttons and micro-interactions |
+| **Soft Cream** | `#F7EFDA` / `#FBF6EB` | Warm typography and comfortable card surfaces |
+| **Clay Shadows** | Dual-layer inset highlights + drop shadows | Physical feeling of depth, squish, and tactile feedback |
 
 ---
 
-## 🚀 Instalação e Execução
+## 🚀 Installation and Execution
 
-### Pré-requisitos
-- **Node.js** 20+ (LTS) e **npm**
+### Prerequisites
+- **Node.js** 20+ (LTS) and **npm**
 - **Git**
 
-### Passo a Passo
+### Step-by-Step
 
-1. **Clone o repositório**:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/nepotira/Flourish.git
-   cd Flourish
+   git clone https://github.com/nepotira/Flowrish.git
+   cd Flowrish
    ```
 
-2. **Instale as dependências de desenvolvimento**:
+2. **Install development dependencies**:
    ```bash
    npm install
    ```
 
-3. **Inicie o servidor local**:
+3. **Start the local server**:
    - **Linux / macOS**:
      ```bash
      ./iniciar-localhost.sh
      ```
    - **Windows**:
-     Dê dois cliques em `iniciar-localhost.bat` ou execute no terminal:
+     Double-click `iniciar-localhost.bat` or run in terminal:
      ```cmd
      iniciar-localhost.bat
      ```
 
-4. **Acesse a aplicação**:
-   Abra seu navegador em [http://localhost:8080](http://localhost:8080).
+4. **Open the application**:
+   Navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 ---
 
-## 🧪 Testes Automatizados
+## 🧪 Automated Testing
 
-O Flowrish utiliza **Vitest** para assegurar a corretude dos validadores e regras de negócio:
+Flowrish uses **Vitest** for unit validation and business logic correctness:
 
 ```bash
-# Executa todos os testes unitários
+# Run all unit tests
 npm test
 ```
 
-Evidência atual de verificação:
+Current test suite status:
 ```text
 ✓ tests/unit/validators.test.js (5 tests)
 ✓ tests/unit/theme-and-data.test.js (4 tests)
@@ -103,52 +107,52 @@ Test Files: 2 passed (2) | Tests: 9 passed (9)
 
 ---
 
-## 📁 Estrutura de Pastas
+## 📁 Directory Structure
 
 ```text
-Flourish/
-├── .agents/memory/         # Memória viva do projeto (STATE, HANDOFF, LESSONS)
-├── .github/                # Configurações do GitHub (Dependabot, templates, CODEOWNERS)
-├── assets/                 # SVGs nativos, logos em alta resolução e termos PDF
-├── css/                    # Folhas de estilo modulares
-│   ├── animations.css      # Efeitos de flutuação e transições 3D
-│   ├── base.css            # Tipografia e reset
-│   ├── components.css      # Botões táteis, cards, inputs e modais
-│   ├── variables.css       # Tokens de cor e sombras Claymorphism
-│   └── pages/              # Estilos específicos por página
-├── docs/                   # Documentação técnica e registros de ambiente
-│   ├── ENVIRONMENT.md      # Registro do ambiente operacional
-│   └── PROJECT_STATE.md    # Estado da arquitetura e rotas
-├── js/                     # Módulos JavaScript (ES Modules nativos)
-│   ├── acervo.js           # Gerenciamento de acervo do usuário
-│   ├── anunciante.js       # Perfil público do anunciante
-│   ├── book-actions.js     # Ações de edição, exclusão e proposta
-│   ├── book-card.js        # Componente de cartão de livro
-│   ├── reviews.js          # Módulo de avaliações de perfil
-│   ├── storage.js          # Integração Firestore e Firebase Auth
-│   ├── theme.js            # Controle de tema claro/escuro
-│   └── validators.js       # Validação de telefone e URLs de WhatsApp
-├── tests/unit/             # Suíte de testes unitários Vitest
-├── CHANGELOG.md            # Histórico de lançamentos (Keep a Changelog + SemVer)
-├── CONTRIBUTING.md         # Guia de contribuição para a comunidade
-├── LICENSE                 # Licença oficial MIT
-├── NOTICE                  # Avisos de direitos autorais
-├── SECURITY.md             # Política de reporte de segurança
-├── server.js               # Servidor local Node.js nativo (sem bundlers)
-└── index.html              # Página inicial da plataforma
+Flowrish/
+├── .agents/memory/         # Project persistent memory (STATE, HANDOFF, LESSONS)
+├── .github/                # GitHub configurations (Dependabot, templates, CODEOWNERS)
+├── assets/                 # Vector SVGs, high-resolution logos, and terms PDF
+├── css/                    # Modular stylesheets
+│   ├── animations.css      # Floating 3D and transition keyframes
+│   ├── base.css            # Typography reset and base tags
+│   ├── components.css      # Tactile buttons, cards, form inputs, and modals
+│   ├── variables.css       # Claymorphism design tokens and palette
+│   └── pages/              # Page-specific styling rules
+├── docs/                   # Technical documentation and environment logs
+│   ├── ENVIRONMENT.md      # Operating environment log
+│   └── PROJECT_STATE.md    # Architecture and route inventory
+├── js/                     # Native JavaScript modules (ES Modules)
+│   ├── acervo.js           # User personal collection management
+│   ├── anunciante.js       # Public advertiser profile
+│   ├── book-actions.js     # Swap offer, edit, and deletion routines
+│   ├── book-card.js        # Reusable book card component
+│   ├── reviews.js          # Reader profile reviews and ratings
+│   ├── storage.js          # Firestore database and Firebase Auth integration
+│   ├── theme.js            # Light/dark mode toggle and storage
+│   └── validators.js       # Phone number and WhatsApp link validation
+├── tests/unit/             # Vitest unit test suite
+├── CHANGELOG.md            # Release history (Keep a Changelog + SemVer)
+├── CONTRIBUTING.md         # Community contribution guidelines
+├── LICENSE                 # Official MIT License
+├── NOTICE                  # Formal copyright and third-party notices
+├── SECURITY.md             # Security policy and disclosure process
+├── server.js               # Native Node.js local server (no bundlers required)
+└── index.html              # Main platform landing page
 ```
 
 ---
 
-## 📜 Governança e Licença
+## 📜 Governance and License
 
-Distribuído sob a licença **MIT**. Veja o arquivo [`LICENSE`](LICENSE) para mais detalhes.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for complete details.
 
-- **Histórico de Mudanças**: consulte o [`CHANGELOG.md`](CHANGELOG.md).
-- **Como Contribuir**: leia nosso guia em [`CONTRIBUTING.md`](CONTRIBUTING.md).
-- **Segurança**: conheça nossa política em [`SECURITY.md`](SECURITY.md).
-- **Documentação de Terceiros**: consulte [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+- **Changelog**: refer to [`CHANGELOG.md`](CHANGELOG.md).
+- **Contributing**: read [`CONTRIBUTING.md`](CONTRIBUTING.md).
+- **Security**: review [`SECURITY.md`](SECURITY.md).
+- **Third-Party Attribution**: review [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
 
 ---
 
-Criado com carinho por **Lorrany Torres** e **Nepotira** 🌸
+Crafted with care by **Lorrany Torres** and **Nepotira** 🌸
